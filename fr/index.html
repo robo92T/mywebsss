@@ -309,7 +309,7 @@
         <ul>
           <li>ECN spreads from 0.0 pips</li>
           <li>High-volume rebates</li>
-          <li>Regulated by ASIC & CySEC</li>
+          <li>Regulated by ASIC &amp; CySEC</li>
         </ul>
         <p>
           <a href="https://www.icmarkets.com" target="_blank" rel="noopener">Visit IC Markets</a>
@@ -319,8 +319,8 @@
       <div class="broker-item wow fadeInUp">
         <h4>XM</h4>
         <ul>
-          <li>Low spreads & zero-commission accounts</li>
-          <li>Offers loyalty program & rebates</li>
+          <li>Low spreads &amp; zero-commission accounts</li>
+          <li>Offers loyalty program &amp; rebates</li>
           <li>MT4/MT5 platforms</li>
         </ul>
         <p>
@@ -344,7 +344,7 @@
         <h4>HotForex</h4>
         <ul>
           <li>Multiple account types</li>
-          <li>Cashback & rebate promotions</li>
+          <li>Cashback &amp; rebate promotions</li>
           <li>Wide range of assets (FX, CFDs)</li>
         </ul>
         <p>
@@ -357,7 +357,7 @@
         <ul>
           <li>Popular rebate programs</li>
           <li>Cent accounts for beginners</li>
-          <li>Promotions & bonus campaigns</li>
+          <li>Promotions &amp; bonus campaigns</li>
         </ul>
         <p>
           <a href="https://fbs.com" target="_blank" rel="noopener">Visit FBS</a>
@@ -390,7 +390,7 @@
         </p>
       </div>
       <div class="col-md-6 wow fadeInRight">
-        <h3>Risks & Responsibility</h3>
+        <h3>Risks &amp; Responsibility</h3>
         <p>
           High leverage can lead to quick gains but also steep losses. Always trade responsibly, maintain a suitable risk management strategy, and consider using demo accounts before live trading.
         </p>
@@ -455,7 +455,7 @@
 <div class="section" id="contact" style="background-color: rgba(0,0,0,0.7); padding: 50px 15px;">
   <div class="container">
     <h2>Contact Us</h2>
-    <p>Need more information about brokers, rebates, or our disclaimers?</p>
+    <p>Need more information about brokers, rebates, or disclaimers?</p>
     <form id="contact-us" method="post" action="contact.php">
       <div class="row">
         <div class="col-sm-6 wow fadeInLeft">
@@ -493,31 +493,109 @@
   </div>
 </footer>
 
-<!-- JS Scripts -->
+<!-- ============= JS SCRIPTS ============= -->
+
+<!-- jQuery -->
 <script src="js/jquery.min.js"></script>
+<!-- Bootstrap JS -->
 <script src="js/bootstrap.min.js"></script>
+<!-- WOW JS -->
 <script src="js/wow.min.js"></script>
-<script src="js/classie.js"></script>
+
+<!-- ============= classie.js (ORIGINAL CODE) ============= -->
 <script>
-  // Shrink header on scroll
+/*!
+ * classie v1.0.0
+ * class helper functions
+ * from bonzo https://github.com/ded/bonzo
+ * MIT license
+ * 
+ * classie.has( elem, 'my-class' ) -> true/false
+ * classie.add( elem, 'my-new-class' )
+ * classie.remove( elem, 'my-unwanted-class' )
+ * classie.toggle( elem, 'my-class' )
+ */
+(function(window) {
+  'use strict';
+  
+  function classReg(className) {
+    return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
+  }
+
+  var hasClass, addClass, removeClass;
+
+  if ('classList' in document.documentElement) {
+    hasClass = function(elem, c) {
+      return elem.classList.contains(c);
+    };
+    addClass = function(elem, c) {
+      elem.classList.add(c);
+    };
+    removeClass = function(elem, c) {
+      elem.classList.remove(c);
+    };
+  } else {
+    hasClass = function(elem, c) {
+      return classReg(c).test(elem.className);
+    };
+    addClass = function(elem, c) {
+      if (!hasClass(elem, c)) {
+        elem.className = elem.className + ' ' + c;
+      }
+    };
+    removeClass = function(elem, c) {
+      elem.className = elem.className.replace(classReg(c), ' ');
+    };
+  }
+
+  function toggleClass(elem, c) {
+    var fn = hasClass(elem, c) ? removeClass : addClass;
+    fn(elem, c);
+  }
+
+  var classie = {
+    hasClass: hasClass,
+    addClass: addClass,
+    removeClass: removeClass,
+    toggleClass: toggleClass,
+    // short names
+    has: hasClass,
+    add: addClass,
+    remove: removeClass,
+    toggle: toggleClass
+  };
+
+  if (typeof define === 'function' && define.amd) {
+    // AMD
+    define(classie);
+  } else {
+    // browser global
+    window.classie = classie;
+  }
+})(window);
+</script>
+<!-- ============= END classie.js ============= -->
+
+<!-- Custom JS: init + header shrink logic using classie -->
+<script>
   function initHeaderShrink() {
-    window.addEventListener('scroll', function(){
+    window.addEventListener('scroll', function() {
       var distanceY = window.pageYOffset || document.documentElement.scrollTop,
           shrinkOn = 100,
           header = document.querySelector("header");
       if (distanceY > shrinkOn) {
-        header.classList.add("smaller");
+        classie.add(header, "smaller");
       } else {
-        header.classList.remove("smaller");
+        classie.remove(header, "smaller");
       }
     });
   }
-  window.onload = initHeaderShrink();
-</script>
-<script>
+  // Initialize header shrink on load
+  window.onload = initHeaderShrink;
+
+  // Initialize WOW.js
   new WOW().init();
-</script>
-<script>
+
   // Smooth scroll for anchor links
   $(function() {
     $('a[href*=\\#]:not([href=\\#])').click(function() {
@@ -533,6 +611,5 @@
     });
   });
 </script>
-
 </body>
 </html>
