@@ -1,323 +1,538 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en-US">
+<html lang="en">
 <head>
-    <title>ForexRabate.com – Broker Affiliates & Educational Resources</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>ForexRabate.com – Broker Rebates & Education</title>
 
-    <!-- Essential SEO meta tags -->
-    <meta name="description" content="Compare Forex brokers' affiliate programs, learn about basic Forex concepts, and find out how rebates can lower your trading costs. We do not provide financial services or direct trading solutions.">
-    <meta name="keywords" content="forex, broker affiliate, forex education, FX trading, short position, long position, lots, leverage, rebate, risk management">
-    <meta name="robots" content="index, follow">
+  <!-- Basic SEO Meta Tags -->
+  <meta name="description" content="We do not offer financial or trading services. Compare top Forex brokers with rebate programs, learn basic trading concepts, and discover how to reduce your costs through rebates." />
+  <meta name="keywords" content="forex, broker, rebates, affiliate, IC Markets, XM, Exness, HotForex, FBS, trading, gold background, adsense" />
+  <meta name="robots" content="index, follow" />
 
-    <!-- If you have a GitHub-based repo, images/logos must be uploaded there and linked accordingly -->
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:400,700">
-    <link rel="stylesheet" href="css/bootstrap.css">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/animate.min.css">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="css/bootstrap.min.css" />
+  <!-- Animate.css (for WOW.js) -->
+  <link rel="stylesheet" href="css/animate.min.css" />
+  
+  <!-- Custom CSS -->
+  <style>
+    /* Gold background for the body */
+    body {
+      background-color: #FFD700; /* gold color */
+      color: #000;              /* black text for contrast */
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Example: Google AdSense link or script (placeholder). Replace 'YOUR-ADSENSE-CODE' with your actual code. -->
-    <!-- 
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <script>
-        (adsbygoogle = window.adsbygoogle || []).push({
-          google_ad_client: "YOUR-ADSENSE-CODE",
-          enable_page_level_ads: true
-        });
-    </script>
-    -->
+    /* Basic container styling */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 30px 15px;
+    }
 
+    /* Header styling */
+    header.navbar-fixed-top {
+      background-color: rgba(0,0,0,0.2);
+      padding: 10px;
+      position: fixed;
+      width: 100%;
+      z-index: 9999;
+      transition: all 0.3s ease;
+    }
+    header img {
+      max-height: 50px;
+    }
+    header.smaller {
+      padding: 5px;
+    }
+    .navbar-right a {
+      color: #fff;
+      text-decoration: none;
+      margin-left: 15px;
+      font-weight: bold;
+    }
+
+    /* Intro / top section */
+    .intro {
+      padding: 100px 0 60px;
+      text-align: center;
+    }
+    .intro p {
+      max-width: 800px;
+      margin: 0 auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+    .intro strong {
+      font-weight: bold;
+    }
+
+    /* Section headings */
+    .section h2, .section h3 {
+      margin-top: 40px;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-align: center;
+    }
+    hr {
+      border-top: 2px solid #000;
+      width: 60px;
+      margin: 0 auto 30px;
+    }
+
+    /* Broker list styling */
+    .broker-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+    }
+    .broker-item {
+      background-color: rgba(255,255,255,0.8);
+      border-radius: 4px;
+      padding: 20px;
+      flex: 1 1 calc(20% - 30px);
+      min-width: 220px;
+    }
+    .broker-item h4 {
+      margin-top: 0;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    .broker-item p,
+    .broker-item li {
+      font-size: 0.95em;
+    }
+    .broker-item a {
+      color: #000;
+      text-decoration: underline;
+    }
+    .broker-item a:hover {
+      text-decoration: none;
+    }
+
+    /* Banners / AdSense placeholders */
+    .banner-placeholder {
+      background-color: rgba(0,0,0,0.1);
+      border: 2px dashed #444;
+      color: #444;
+      text-align: center;
+      margin: 20px auto;
+      padding: 20px;
+    }
+
+    /* CTA section */
+    #CTA-1 {
+      background-color: rgba(0,0,0,0.7);
+      color: #fff;
+      padding: 50px 15px;
+      text-align: center;
+    }
+    #CTA-1 h2 {
+      text-transform: none;
+      margin-bottom: 30px;
+    }
+    #CTA-1 a.btn {
+      background: #FFD700;
+      border: 2px solid #fff;
+      color: #000;
+      font-weight: bold;
+      padding: 10px 30px;
+      text-decoration: none;
+    }
+    #CTA-1 a.btn:hover {
+      background: #fff;
+      color: #000;
+    }
+
+    /* Contact section */
+    #contact h2 {
+      color: #fff;
+    }
+    #contact p {
+      color: #fff;
+      text-align: center;
+    }
+    #contact form .form {
+      width: 100%;
+      margin-bottom: 15px;
+      padding: 10px;
+      border: 1px solid #999;
+      border-radius: 4px;
+    }
+    #contact form button.form-btn {
+      background: #000;
+      color: #FFD700;
+      border: none;
+      padding: 12px 30px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+    #contact form button.form-btn:hover {
+      background: #333;
+    }
+
+    /* Footer */
+    footer {
+      background-color: rgba(0,0,0,0.2);
+      color: #000;
+      padding: 20px 15px;
+    }
+    footer span {
+      font-weight: bold;
+    }
+    .networks {
+      list-style: none;
+      display: flex;
+      justify-content: flex-end;
+      gap: 15px;
+    }
+    .networks li a {
+      color: #000;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .networks li a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal (popup) styling */
+    .modal-dialog {
+      max-width: 600px;
+      margin: 100px auto;
+    }
+    .modal-content {
+      background: #fff;
+      color: #000;
+      padding: 20px;
+      border-radius: 8px;
+      position: relative;
+    }
+    .modal-header h5 {
+      margin: 0 0 10px;
+      font-weight: bold;
+    }
+    .modal-header button.close {
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      position: absolute;
+      top: 10px;
+      right: 10px;
+    }
+    .modal-body p {
+      margin: 0 0 15px;
+    }
+    .modal-footer button {
+      background: #FFD700;
+      border: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      cursor: pointer;
+    }
+
+    /* Responsive adjustments */
+    @media (max-width: 767px) {
+      .broker-list {
+        flex-direction: column;
+      }
+      .broker-item {
+        flex: 1 1 auto;
+      }
+    }
+  </style>
+
+  <!-- Example: If you want to load your AdSense script globally, uncomment and replace with real data
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({
+       google_ad_client: "YOUR-ADSENSE-CODE",
+       enable_page_level_ads: true
+     });
+  </script>
+  -->
 </head>
-<body>    
-    <header id="header" class="navbar-fixed-top">
-        <a class="brand" href="index.html">
-            <!-- Update this image link in GitHub or your hosting -->
-            <img src="images/logo.png" width="200" alt="ForexRabate.com Logo">
-        </a>
-        
-        <nav class="navbar-right hidden-xs">
-            <a class="last-child white" href="#contact">Contact</a>
-        </nav>
-        <div class="visible-nav navbar-right visible-xs">
-            <a href="#contact">Contact</a>
-        </div>
-    </header>
-            
-    <div class="intro white">
-        <div class="container wow animated fadeInUp">
-            <p class="lead-creative top-margin">
-                <strong>Disclaimer:</strong> We do not provide financial services, direct trading, or investment advice. Our platform focuses on comparing broker affiliate programs, educational resources, and rebate details. Trading Forex carries a high level of risk and may not be suitable for all investors.
-            </p>
-            <p id="office-place" class="office-place">
-                <strong>ForexRabate.com</strong> – Choose the right broker affiliate program and learn the fundamentals of Forex trading.
-            </p>
-        </div>
-    </div><!-- /.intro -->
+<body>
 
-    <!-- 
-        *************** GOOGLE ADSENSE/BANNER PLACEMENT #1 ***************
-        Use a placeholder container for AdSense or custom banner. 
-        Replace the commented-out code below with your actual AdSense code. 
-    -->
-    <div class="text-center" style="margin: 20px;">
+<header id="header" class="navbar-fixed-top">
+  <div class="container">
+    <a class="brand" href="index.html">
+      <!-- Example Logo. Upload your own logo to GitHub or another host and update src -->
+      <img src="images/logo.png" alt="ForexRabate.com" />
+    </a>
+    <nav class="navbar-right hidden-xs">
+      <a class="last-child white" href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<!-- Intro Section -->
+<div class="intro wow fadeInUp" data-wow-duration="1s">
+  <div class="container">
+    <p><strong>Disclaimer:</strong> We do <em>not</em> provide financial or trading services. Our website compares brokers that offer rebate programs and provides basic educational content only. Always trade responsibly and understand the risks involved.</p>
+    <p><strong>ForexRabate.com</strong> – Explore top Forex brokers for potential rebates. Learn how to reduce costs and improve your trading knowledge.</p>
+  </div>
+</div>
+
+<!-- Banner / AdSense Placeholder #1 -->
+<div class="banner-placeholder">
+  <!-- You can insert your AdSense code here. For example:
+  <ins class="adsbygoogle"
+       style="display:inline-block;width:728px;height:90px"
+       data-ad-client="YOUR-ADSENSE-CODE"
+       data-ad-slot="AD-SLOT-ID">
+  </ins>
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
+  -->
+  <p>Banner Placeholder #1 (728x90 or your preferred size)</p>
+</div>
+
+<!-- Broker Comparison Section -->
+<section class="section">
+  <div class="container">
+    <h2>Top 5 Brokers Offering Rebates</h2>
+    <hr />
+    <p style="text-align:center; max-width: 800px; margin: 0 auto;">
+      Compare these popular brokers known for their rebate options. We do not guarantee or endorse any specific company. Always do your own research.
+    </p>
+
+    <div class="broker-list top40">
+      <!-- Broker 1 -->
+      <div class="broker-item wow fadeInUp">
+        <h4>IC Markets</h4>
+        <ul>
+          <li>ECN spreads from 0.0 pips</li>
+          <li>High-volume rebates</li>
+          <li>Regulated by ASIC & CySEC</li>
+        </ul>
+        <p>
+          <a href="https://www.icmarkets.com" target="_blank" rel="noopener">Visit IC Markets</a>
+        </p>
+      </div>
+      <!-- Broker 2 -->
+      <div class="broker-item wow fadeInUp">
+        <h4>XM</h4>
+        <ul>
+          <li>Low spreads & zero-commission accounts</li>
+          <li>Offers loyalty program & rebates</li>
+          <li>MT4/MT5 platforms</li>
+        </ul>
+        <p>
+          <a href="https://www.xm.com" target="_blank" rel="noopener">Visit XM</a>
+        </p>
+      </div>
+      <!-- Broker 3 -->
+      <div class="broker-item wow fadeInUp">
+        <h4>Exness</h4>
+        <ul>
+          <li>Flexible leverage up to 1:2000</li>
+          <li>Spread rebate incentives</li>
+          <li>Instant withdrawals</li>
+        </ul>
+        <p>
+          <a href="https://www.exness.com" target="_blank" rel="noopener">Visit Exness</a>
+        </p>
+      </div>
+      <!-- Broker 4 -->
+      <div class="broker-item wow fadeInUp">
+        <h4>HotForex</h4>
+        <ul>
+          <li>Multiple account types</li>
+          <li>Cashback & rebate promotions</li>
+          <li>Wide range of assets (FX, CFDs)</li>
+        </ul>
+        <p>
+          <a href="https://www.hotforex.com" target="_blank" rel="noopener">Visit HotForex</a>
+        </p>
+      </div>
+      <!-- Broker 5 -->
+      <div class="broker-item wow fadeInUp">
+        <h4>FBS</h4>
+        <ul>
+          <li>Popular rebate programs</li>
+          <li>Cent accounts for beginners</li>
+          <li>Promotions & bonus campaigns</li>
+        </ul>
+        <p>
+          <a href="https://fbs.com" target="_blank" rel="noopener">Visit FBS</a>
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Banner / AdSense Placeholder #2 -->
+<div class="banner-placeholder">
+  <!-- Insert your AdSense code here -->
+  <p>Banner Placeholder #2 (e.g., 300x250, 728x90, etc.)</p>
+</div>
+
+<!-- Education Section -->
+<section class="section">
+  <div class="container">
+    <h2>Forex 101: Key Points</h2>
+    <hr />
+    <div class="row">
+      <div class="col-md-6 wow fadeInLeft">
+        <h3>Basics of Forex Trading</h3>
+        <p>
+          The Forex market is the global marketplace for trading national currencies against one another. <strong>Rebates</strong> allow traders to earn back a percentage of the spread or commission they pay.
+        </p>
+        <p>
+          <a href="https://www.bloomberg.com/markets" target="_blank" rel="noopener">Bloomberg Markets</a> | 
+          <a href="https://www.investing.com/" target="_blank" rel="noopener">Investing.com</a>
+        </p>
+      </div>
+      <div class="col-md-6 wow fadeInRight">
+        <h3>Risks & Responsibility</h3>
+        <p>
+          High leverage can lead to quick gains but also steep losses. Always trade responsibly, maintain a suitable risk management strategy, and consider using demo accounts before live trading.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Banner / AdSense Placeholder #3 -->
+<div class="banner-placeholder">
+  <!-- Insert your AdSense code here -->
+  <p>Banner Placeholder #3 (Responsive or custom size)</p>
+</div>
+
+<!-- CTA Section -->
+<div class="section" id="CTA-1">
+  <div class="container">
+    <h2>Ready to Explore These Brokers or Learn More?</h2>
+    <a class="btn" href="#contact">Contact Us</a>
+  </div>
+</div>
+
+<!-- Popup/Modal Trigger -->
+<div class="banner-placeholder" style="margin-top: 40px;">
+  <button class="btn btn-primary" data-toggle="modal" data-target="#adsModal">
+    Open Popup (AdSense/Promo)
+  </button>
+  <p>Example of a Popup Trigger Button</p>
+</div>
+
+<!-- Modal (Popup) for Ads or Announcements -->
+<div class="modal fade" id="adsModal" tabindex="-1" role="dialog" aria-labelledby="adsModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="adsModalLabel">Special Offer / Ad</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <p>Insert your Google AdSense code or promotional message here.</p>
         <!-- 
-        <ins class="adsbygoogle"
-            style="display:inline-block;width:728px;height:90px"
-            data-ad-client="YOUR-ADSENSE-CODE"
-            data-ad-slot="AD-SLOT-ID"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
+          e.g., 
+          <ins class="adsbygoogle"
+               style="display:block"
+               data-ad-client="YOUR-ADSENSE-CODE"
+               data-ad-slot="AD-SLOT-ID"
+               data-ad-format="auto"
+               data-full-width-responsive="true"></ins>
+          <script>
+              (adsbygoogle = window.adsbygoogle || []).push({});
+          </script>
         -->
-        <p>Banner Placeholder #1 (728x90)</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" data-dismiss="modal">Close</button>
+      </div>
     </div>
+  </div>
+</div>
 
-    <div class="section" id="compare-brokers">
-        <div class="container">
-            <h2>Compare Top Forex Brokers & Their Affiliate Programs</h2>
-            <hr>
-            <p>
-                We partner with well-known brokers so you can explore their affiliate or introducing broker (IB) programs. Earn rebates or commissions by referring new traders, or simply enjoy lower spreads if you trade yourself.
-            </p>
-            <div class="row">
-                <div class="col-md-4 wow animated fadeInLeft">
-                    <h4>Broker A</h4>
-                    <ul>
-                        <li>Regulated by Top Financial Authority</li>
-                        <li>Offers competitive spreads</li>
-                        <li>Up to <strong>35%</strong> rebate on IB program</li>
-                    </ul>
-                    <p>
-                        <a href="https://www.brokerA.com" target="_blank" rel="noopener">Visit Broker A</a> (Affiliate Link)
-                    </p>
-                </div>
-                <div class="col-md-4 wow animated fadeInDown">
-                    <h4>Broker B</h4>
-                    <ul>
-                        <li>Zero-commission on major currency pairs</li>
-                        <li>High leverage options (up to 1:500)</li>
-                        <li>Exclusive <strong>rebate structure</strong> for affiliates</li>
-                    </ul>
-                    <p>
-                        <a href="https://www.brokerB.com" target="_blank" rel="noopener">Visit Broker B</a> (Affiliate Link)
-                    </p>
-                </div>
-                <div class="col-md-4 wow animated fadeInRight">
-                    <h4>Broker C</h4>
-                    <ul>
-                        <li>Popular for social trading & copy trading</li>
-                        <li>Low minimum deposit</li>
-                        <li>Tiered rebates based on monthly volume</li>
-                    </ul>
-                    <p>
-                        <a href="https://www.brokerC.com" target="_blank" rel="noopener">Visit Broker C</a> (Affiliate Link)
-                    </p>
-                </div>
-            </div>
+<!-- Contact Section -->
+<div class="section" id="contact" style="background-color: rgba(0,0,0,0.7); padding: 50px 15px;">
+  <div class="container">
+    <h2>Contact Us</h2>
+    <p>Need more information about brokers, rebates, or our disclaimers?</p>
+    <form id="contact-us" method="post" action="contact.php">
+      <div class="row">
+        <div class="col-sm-6 wow fadeInLeft">
+          <input type="text" name="name" id="name" required class="form" placeholder="Name" />
+          <input type="email" name="email" id="email" required class="form" placeholder="Email" />
+          <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
         </div>
-    </div><!-- compare-brokers -->
-
-    <div class="section" id="forex-basics">
-        <div class="container">
-            <h2>Forex Basics & Education</h2>
-            <hr>
-            <p>
-                Whether you're new to Forex or looking to brush up on fundamentals, our educational section covers:
-            </p>
-            <div class="row">
-                <div class="col-sm-6 wow animated fadeInLeft">
-                    <h4>What is Forex?</h4>
-                    <p>
-                        The Foreign Exchange (Forex) market is where currencies are traded globally. The purpose can be speculation, hedging, or simply exchanging for business/travel.
-                    </p>
-                    <p><a href="https://www.bloomberg.com/markets/currencies" target="_blank" rel="noopener">Visit Bloomberg Currencies</a> for live updates.</p>
-                    <p><a href="https://www.investing.com/currencies/" target="_blank" rel="noopener">Check out Investing.com</a> for FX analysis.</p>
-                </div>
-                <div class="col-sm-6 wow animated fadeInRight">
-                    <h4>Risk Disclosure</h4>
-                    <p>
-                        Forex trading involves substantial risk. Always understand margin calls, leverage limitations, and be prepared for market volatility. We recommend practicing on a demo account before live trading.
-                    </p>
-                </div>
-            </div>
-            
-            <div class="row top40">
-                <div class="col-md-4 wow animated fadeInUp">
-                    <h4>Short vs. Long Positions</h4>
-                    <p>
-                        <strong>Long</strong> position: Buying a currency pair in anticipation that its value will rise.<br>
-                        <strong>Short</strong> position: Selling a currency pair believing its value will drop.
-                    </p>
-                </div>
-                <div class="col-md-4 wow animated fadeInUp">
-                    <h4>Lots & Leverage</h4>
-                    <p>
-                        A <strong>lot</strong> represents a standardized unit of currency. Leverage (e.g., 1:100) amplifies your buying power but also magnifies risks.
-                    </p>
-                </div>
-                <div class="col-md-4 wow animated fadeInUp">
-                    <h4>Understanding Rebates</h4>
-                    <p>
-                        <strong>Forex rebates</strong> let you receive a portion of the spread or commission back on your trades. This lowers overall trading costs and can be an additional earning opportunity.
-                    </p>
-                </div>
-            </div>
-
-            <!-- 
-                *************** GOOGLE ADSENSE/BANNER PLACEMENT #2 ***************
-                Another placeholder for AdSense or custom banner (e.g., 300x250).
-            -->
-            <div class="text-center" style="margin: 20px;">
-                <!-- 
-                <ins class="adsbygoogle"
-                    style="display:inline-block;width:300px;height:250px"
-                    data-ad-client="YOUR-ADSENSE-CODE"
-                    data-ad-slot="AD-SLOT-ID"></ins>
-                <script>
-                    (adsbygoogle = window.adsbygoogle || []).push({});
-                </script>
-                -->
-                <p>Banner Placeholder #2 (300x250)</p>
-            </div>
-
+        <div class="col-sm-6 wow fadeInRight">
+          <textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea>
         </div>
-    </div><!-- forex-basics -->
+      </div>
+      <div class="text-center" style="margin-top: 15px;">
+        <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
+      </div>
+    </form>
+  </div>
+</div>
 
-    <div class="section" id="rebates-info">
-        <div class="container">
-            <h3>How Rebates Work</h3>
-            <p>
-                1. You register with a broker through an affiliate or IB link.<br>
-                2. You trade Forex pairs with the broker.<br>
-                3. The broker pays a portion of the spread or commission back to the affiliate, who then shares it with you. 
-            </p>
-            <p>
-                Since each broker offers different rates, it’s important to choose one that fits your trading style (scalping, day trading, swing trading, etc.). 
-            </p>
-        </div>
-    </div><!-- rebates-info -->
-
-    <div class="section" id="CTA-1">
-        <div class="container">
-            <h2 class="white">Looking to Start or Expand Your Affiliate Program Search?</h2>
-            <div class="text-center">
-                <a class="btn btn-large btn-border" href="#contact">Get in Touch</a>
-            </div>
-        </div>
+<!-- Footer -->
+<footer id="site-footer">
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <span>&copy; 2025 ForexRabate.com</span> – We do not provide direct trading or investment services. All rights reserved.
+      </div>
+      <div class="col-sm-6">
+        <ul class="networks">
+          <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+        </ul>
+      </div>
     </div>
+  </div>
+</footer>
 
-    <div class="content">
-        <section class="include-contact">
-            <div class="container">
-                <h2>Disclaimer & Risk Warning</h2>
-                <hr>
-                <p class="lead top20">
-                    All content provided is for informational and educational purposes only. We do not offer direct trading or financial services. Always do your due diligence before signing up with a broker. Trading involves risk of loss.
-                </p>
-            </div>
-        </section>
-    </div><!-- /.content -->
-
-    <!-- 
-        *************** GOOGLE ADSENSE/BANNER PLACEMENT #3 ***************
-        For example, a responsive AdSense unit or a vertical banner.
-    -->
-    <div class="text-center" style="margin: 20px;">
-        <!-- 
-        <ins class="adsbygoogle"
-            style="display:block"
-            data-ad-client="YOUR-ADSENSE-CODE"
-            data-ad-slot="AD-SLOT-ID"
-            data-ad-format="auto"
-            data-full-width-responsive="true"></ins>
-        <script>
-            (adsbygoogle = window.adsbygoogle || []).push({});
-        </script>
-        -->
-        <p>Banner Placeholder #3 (Responsive)</p>
-    </div>
-
-    <div class="section" id="contact">
-        <div class="container">
-            <h2 class="white">Contact Us</h2>
-            <p class="white text-center">Questions about broker affiliate programs, rebates, or our educational content?</p>
-            <form id="contact-us" method="post" action="contact.php">
-                <div class="row">
-                    <div class="col-sm-6 wow animated fadeInLeft">
-                        <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
-                        <input type="email" name="email" id="email" required="required" class="form" placeholder="Email" />
-                        <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
-                    </div>
-                    <div class="col-sm-6 wow animated fadeInRight">
-                        <textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea>
-                    </div>
-                </div>
-                <div class="text-center">
-                    <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-                </div>
-            </form>
-        </div>
-    </div><!-- /contact -->
-
-    <footer id="site-footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-6">
-                    <span>&copy; 2025 ForexRabate.com – All Rights Reserved.</span>
-                </div>
-                <div class="col-sm-6">
-                    <ul class="networks">
-                        <li><a href="https://twitter.com/ForexRabate"><span class="twitter">Twitter</span></a></li>
-                        <li><a href="https://facebook.com/ForexRabate"><span class="facebook">Facebook</span></a></li>
-                        <li><a href="https://instagram.com/ForexRabate"><span class="instagram">Instagram</span></a></li>
-                        <li><a href="http://www.linkedin.com/company/ForexRabate"><span class="linkedin">LinkedIn</span></a></li>
-                    </ul>
-                </div>
-            </div>
-        </div><!-- /.container -->
-    </footer>
-
-    <!-- JavaScript files -->
-    <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/wow.min.js"></script>
-    <script src="js/classie.js"></script>
-    <script>
-        function init() {
-            window.addEventListener('scroll', function(e){
-                var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                    shrinkOn = 300,
-                    header = document.querySelector("header");
-                if (distanceY > shrinkOn) {
-                    classie.add(header,"smaller");
-                } else {
-                    if (classie.has(header,"smaller")) {
-                        classie.remove(header,"smaller");
-                    }
-                }
-            });
+<!-- JS Scripts -->
+<script src="js/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/wow.min.js"></script>
+<script src="js/classie.js"></script>
+<script>
+  // Shrink header on scroll
+  function initHeaderShrink() {
+    window.addEventListener('scroll', function(){
+      var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+          shrinkOn = 100,
+          header = document.querySelector("header");
+      if (distanceY > shrinkOn) {
+        header.classList.add("smaller");
+      } else {
+        header.classList.remove("smaller");
+      }
+    });
+  }
+  window.onload = initHeaderShrink();
+</script>
+<script>
+  new WOW().init();
+</script>
+<script>
+  // Smooth scroll for anchor links
+  $(function() {
+    $('a[href*=\\#]:not([href=\\#])').click(function() {
+      if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') 
+         && location.hostname === this.hostname) {
+        var target = $(this.hash);
+        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+        if (target.length) {
+          $('html,body').animate({ scrollTop: target.offset().top }, 1000);
+          return false;
         }
-        window.onload = init();
-    </script>
-    <script type="text/javascript">
-        new WOW().init();
-    </script>
-    <script type="text/javascript">
-        // Smooth scrolling for in-page links
-        $(function() {
-            $('a[href*=\\#]:not([href=\\#])').click(function() {
-                if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') 
-                 && location.hostname === this.hostname) {
-                  var target = $(this.hash);
-                  target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-                  if (target.length) {
-                    $('html,body').animate({scrollTop: target.offset().top}, 1000);
-                    return false;
-                  }
-                }
-            });
-        });
-    </script>
+      }
+    });
+  });
+</script>
+
 </body>
 </html>
