@@ -1,615 +1,467 @@
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]><html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]><html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en-US">
+<!--<![endif]-->
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>ForexRabate.com – Broker Rebates & Education</title>
+  <meta http-equiv="content-type" content="text/html;charset=utf-8" />
+  <meta charset="utf-8">
+  <!--[if IE]>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <![endif]-->
+    
+  <title>Creative Kitten</title>
+  <meta name="description" content="We're a creative company.">
+  <meta name="author" content="Best office" />
+  <meta name="keywords" content="Creative Content, creativekitten" />
 
-  <!-- Basic SEO Meta Tags -->
-  <meta name="description" content="We do not offer financial or trading services. Compare top Forex brokers with rebate programs, learn basic trading concepts, and discover how to reduce your costs through rebates." />
-  <meta name="keywords" content="forex, broker, rebates, affiliate, IC Markets, XM, Exness, HotForex, FBS, trading, gold background, adsense" />
-  <meta name="robots" content="index, follow" />
+  <meta name="Robots" content="all">
+  <meta name="Friendly" content="True">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="apple-mobile-web-app-title" content="Creative Content">
 
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="css/bootstrap.min.css" />
-  <!-- Animate.css (for WOW.js) -->
-  <link rel="stylesheet" href="css/animate.min.css" />
-  
-  <!-- Custom CSS -->
-  <style>
-    /* Gold background for the body */
-    body {
-      background-color: #FFD700; /* gold color */
-      color: #000;              /* black text for contrast */
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    /* Basic container styling */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 30px 15px;
-    }
-
-    /* Header styling */
-    header.navbar-fixed-top {
-      background-color: rgba(0,0,0,0.2);
-      padding: 10px;
-      position: fixed;
-      width: 100%;
-      z-index: 9999;
-      transition: all 0.3s ease;
-    }
-    header img {
-      max-height: 50px;
-    }
-    header.smaller {
-      padding: 5px;
-    }
-    .navbar-right a {
-      color: #fff;
-      text-decoration: none;
-      margin-left: 15px;
-      font-weight: bold;
-    }
-
-    /* Intro / top section */
-    .intro {
-      padding: 100px 0 60px;
-      text-align: center;
-    }
-    .intro p {
-      max-width: 800px;
-      margin: 0 auto;
-      font-size: 1.1em;
-      line-height: 1.6;
-    }
-    .intro strong {
-      font-weight: bold;
-    }
-
-    /* Section headings */
-    .section h2, .section h3 {
-      margin-top: 40px;
-      margin-bottom: 20px;
-      text-transform: uppercase;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-align: center;
-    }
-    hr {
-      border-top: 2px solid #000;
-      width: 60px;
-      margin: 0 auto 30px;
-    }
-
-    /* Broker list styling */
-    .broker-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 30px;
-    }
-    .broker-item {
-      background-color: rgba(255,255,255,0.8);
-      border-radius: 4px;
-      padding: 20px;
-      flex: 1 1 calc(20% - 30px);
-      min-width: 220px;
-    }
-    .broker-item h4 {
-      margin-top: 0;
-      margin-bottom: 10px;
-      font-weight: bold;
-    }
-    .broker-item p,
-    .broker-item li {
-      font-size: 0.95em;
-    }
-    .broker-item a {
-      color: #000;
-      text-decoration: underline;
-    }
-    .broker-item a:hover {
-      text-decoration: none;
-    }
-
-    /* Banners / AdSense placeholders */
-    .banner-placeholder {
-      background-color: rgba(0,0,0,0.1);
-      border: 2px dashed #444;
-      color: #444;
-      text-align: center;
-      margin: 20px auto;
-      padding: 20px;
-    }
-
-    /* CTA section */
-    #CTA-1 {
-      background-color: rgba(0,0,0,0.7);
-      color: #fff;
-      padding: 50px 15px;
-      text-align: center;
-    }
-    #CTA-1 h2 {
-      text-transform: none;
-      margin-bottom: 30px;
-    }
-    #CTA-1 a.btn {
-      background: #FFD700;
-      border: 2px solid #fff;
-      color: #000;
-      font-weight: bold;
-      padding: 10px 30px;
-      text-decoration: none;
-    }
-    #CTA-1 a.btn:hover {
-      background: #fff;
-      color: #000;
-    }
-
-    /* Contact section */
-    #contact h2 {
-      color: #fff;
-    }
-    #contact p {
-      color: #fff;
-      text-align: center;
-    }
-    #contact form .form {
-      width: 100%;
-      margin-bottom: 15px;
-      padding: 10px;
-      border: 1px solid #999;
-      border-radius: 4px;
-    }
-    #contact form button.form-btn {
-      background: #000;
-      color: #FFD700;
-      border: none;
-      padding: 12px 30px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    #contact form button.form-btn:hover {
-      background: #333;
-    }
-
-    /* Footer */
-    footer {
-      background-color: rgba(0,0,0,0.2);
-      color: #000;
-      padding: 20px 15px;
-    }
-    footer span {
-      font-weight: bold;
-    }
-    .networks {
-      list-style: none;
-      display: flex;
-      justify-content: flex-end;
-      gap: 15px;
-    }
-    .networks li a {
-      color: #000;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .networks li a:hover {
-      text-decoration: underline;
-    }
-
-    /* Modal (popup) styling */
-    .modal-dialog {
-      max-width: 600px;
-      margin: 100px auto;
-    }
-    .modal-content {
-      background: #fff;
-      color: #000;
-      padding: 20px;
-      border-radius: 8px;
-      position: relative;
-    }
-    .modal-header h5 {
-      margin: 0 0 10px;
-      font-weight: bold;
-    }
-    .modal-header button.close {
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      position: absolute;
-      top: 10px;
-      right: 10px;
-    }
-    .modal-body p {
-      margin: 0 0 15px;
-    }
-    .modal-footer button {
-      background: #FFD700;
-      border: none;
-      padding: 10px 20px;
-      font-weight: bold;
-      cursor: pointer;
-    }
-
-    /* Responsive adjustments */
-    @media (max-width: 767px) {
-      .broker-list {
-        flex-direction: column;
-      }
-      .broker-item {
-        flex: 1 1 auto;
-      }
-    }
-  </style>
-
-  <!-- Example: If you want to load your AdSense script globally, uncomment and replace with real data
-  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-  <script>
-     (adsbygoogle = window.adsbygoogle || []).push({
-       google_ad_client: "YOUR-ADSENSE-CODE",
-       enable_page_level_ads: true
-     });
-  </script>
-  -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-57x57-precomposed.png" sizes="57x57;">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-72x72-precomposed.png" sizes="72x72">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-76x76-precomposed.png" sizes="76x76">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-114x114-precomposed.html" sizes="114x114">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-120x120-precomposed.png" sizes="120x120">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-144x144-precomposed.png" sizes="144x144">
+  <link rel="apple-touch-icon-precomposed" href="i/icons/apple-touch-icon-152x152-precomposed.png" sizes="152x152">
+	
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700">
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/bootstrap.css">
+  <link rel="stylesheet" href="../css/animate.min.css">
 </head>
-<body>
 
-<header id="header" class="navbar-fixed-top">
-  <div class="container">
+<body data-lang="en">
+    
+  <header id="header" class=" navbar-fixed-top">
     <a class="brand" href="index.html">
-      <!-- Example Logo. Upload your own logo to GitHub or another host and update src -->
-      <img src="images/logo.png" alt="ForexRabate.com" />
+      <img src="../images/logo.png" width="200">
     </a>
+      
     <nav class="navbar-right hidden-xs">
-      <a class="last-child white" href="#contact">Contact</a>
+      <a href="http://technext.github.io/Creative/fr/index.html" hreflang="fr">FR</a>
+      <a class="active" href="http://technext.github.io/Creative/index.html" hreflang="en-US">EN</a>
+      <a class="last-child white" href="#contact">Contactez</a>
     </nav>
+    <div class="visible-nav navbar-right visible-xs">
+      <a href="fr/index.html" hreflang="fr">FR</a>
+      <a class="active" href="index.html" hreflang="en-US">EN</a>
+      <a href="#contact">Contactez</a>
+    </div>
+  </header>
+      
+  <div class="intro white">
+    <div class="container wow animated fadeInUp">
+      <p class="lead-creative top-margin">
+        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+      </p>
+      <p id="office-place" class="office-place">Opérant à partir de Newyork et États-Unis</p>
+    </div><!-- /.container -->
+  </div><!-- /.intro -->
+
+  <!-- Banner Placeholder #1 -->
+  <div style="text-align:center; margin: 20px 0;">
+    <!-- Insert your Google AdSense code here (e.g., 728x90) -->
+    <p style="border:2px dashed #bbb; padding:10px;">Banner Placeholder #1 (728x90)</p>
   </div>
-</header>
+    
+  <div class="content" role="main-content">
+    <section>
+      <div class="container team-container">
+        <h2>Creative Minds</h2>
+        <hr>
+        <p class="lead-creative-banner">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text.
+        </p>
+        <ul class="team">
+          <li class="col-md-4 wow animated fadeInLeft">
+            <img class="border-img" src="../images/Reza.jpg" alt="John" width="280" height="280">
+            <imgcaption>
+              <strong>John <span class="name">Doe</span></strong>
+            </imgcaption>
+          </li>
+          <li class="col-md-4 wow animated fadeInDown">
+            <img class="border-img" src="../images/jewel.jpg" alt="Jane" width="280" height="280">
+            <imgcaption>
+              <strong>Jane <span class="name">Doe</span></strong>
+            </imgcaption>
+          </li>
+          <li class="col-md-4 wow animated fadeInRight">
+            <img class="border-img" src="../images/Reza.jpg" alt="Reza" width="280" height="280">
+            <imgcaption>
+              <strong>William <span class="name">Doe</span></strong>
+            </imgcaption>
+          </li>
+        </ul><!-- /.team -->
+      </div><!-- /.container -->
+    </section>
+      
+    <section>
+      <div class="container">
+        <h2 class="bottom100">Ce que nous faisons</h2>
+        <li class="col-md-6 wow animated fadeInLeft">
+          <div class="slide-img bottom30">
+            <img src="../images/pc1.jpg" width="480">
+          </div>
+          <br />
+          <h4>1. projets</h4>
+          <p class="function-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.
+          </p>
+        </li>
 
-<!-- Intro Section -->
-<div class="intro wow fadeInUp" data-wow-duration="1s">
-  <div class="container">
-    <p><strong>Disclaimer:</strong> We do <em>not</em> provide financial or trading services. Our website compares brokers that offer rebate programs and provides basic educational content only. Always trade responsibly and understand the risks involved.</p>
-    <p><strong>ForexRabate.com</strong> – Explore top Forex brokers for potential rebates. Learn how to reduce costs and improve your trading knowledge.</p>
-  </div>
-</div>
+        <li class="col-md-6 wow animated fadeInRight">
+          <div class="slide-img bottom30">
+            <img src="../images/pc2.jpg" width="480">
+          </div>
+          <br />
+          <h4>2.autres</h4>
+          <p class="function-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer.
+          </p>
+        </li>
+      </div><!-- /.container -->
 
-<!-- Banner / AdSense Placeholder #1 -->
-<div class="banner-placeholder">
-  <!-- You can insert your AdSense code here. For example:
-  <ins class="adsbygoogle"
-       style="display:inline-block;width:728px;height:90px"
-       data-ad-client="YOUR-ADSENSE-CODE"
-       data-ad-slot="AD-SLOT-ID">
-  </ins>
-  <script>
-     (adsbygoogle = window.adsbygoogle || []).push({});
-  </script>
-  -->
-  <p>Banner Placeholder #1 (728x90 or your preferred size)</p>
-</div>
+      <!-- Banner Placeholder #2 -->
+      <div style="text-align:center; margin: 20px 0;">
+        <!-- Insert your Google AdSense code here (e.g., 300x250) -->
+        <p style="border:2px dashed #bbb; padding:10px;">Banner Placeholder #2 (300x250)</p>
+      </div>
 
-<!-- Broker Comparison Section -->
-<section class="section">
-  <div class="container">
-    <h2>Top 5 Brokers Offering Rebates</h2>
-    <hr />
-    <p style="text-align:center; max-width: 800px; margin: 0 auto;">
-      Compare these popular brokers known for their rebate options. We do not guarantee or endorse any specific company. Always do your own research.
+      <div class="column-service">
+        <div class="container ">
+          <h3 class="bottom30">nos services</h3>
+          <div>
+            <ul class="col-md-3 wow animated zoomIn">
+              <li class="service-list"><strong>Voix et le ton</strong></li>
+              <li class="service-list"><strong>photographie</strong></li>
+              <li class="service-list"><strong>vidéographie</strong></li>
+              <li class="service-list"><strong>illustration</strong></li>
+              <li class="service-list"><strong>Papeterie ( impression )</strong></li>
+            </ul>
+            <ul class="col-md-3 wow animated zoomIn">
+              <li class="service-list"><strong>Voix et le ton</strong></li>
+              <li class="service-list"><strong>photographie</strong></li>
+              <li class="service-list"><strong>vidéographie</strong></li>
+              <li class="service-list"><strong>illustration</strong></li>
+              <li class="service-list"><strong>Papeterie ( impression )</strong></li>
+            </ul>
+            <ul class="col-md-3 wow animated zoomIn">
+              <li class="service-list"><strong>Voix et le ton</strong></li>
+              <li class="service-list"><strong>photographie</strong></li>
+              <li class="service-list"><strong>vidéographie</strong></li>
+              <li class="service-list"><strong>illustration</strong></li>
+              <li class="service-list"><strong>Papeterie ( impression )</strong></li>
+            </ul>
+            <ul class="col-md-3 wow animated zoomIn">
+              <li class="service-list"><strong>Voix et le ton</strong></li>
+              <li class="service-list"><strong>photographie</strong></li>
+              <li class="service-list"><strong>vidéographie</strong></li>
+              <li class="service-list"><strong>illustration</strong></li>
+              <li class="service-list"><strong>Papeterie ( impression )</strong></li>
+            </ul>
+          </div>
+        </div><!-- /.container -->
+      </div><!-- /.services -->
+    </section>
+
+    <p class="text-center grey">
+      Ce qui est dans votre esprit ? 
+      <a class="btn btn-large btn-border" href="#contact">Contactez-nous</a>
     </p>
+    <br />
+      
+    <section class="clients-section">
+      <h2>nos clients</h2>
+      <br />
+      <ul class="clients-projects">
+        <li class="first-logo">
+          <a href="#">
+            <strong class="company-logo">Binary Domain</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li>Nouvelle identité de marque</li>
+                  <li>Interface utilisateur</li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+        <li class="first-logo">
+          <a href="#">
+            <strong class="company-logo">Citi</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li>Panneau de contrôle</li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+        <li class="second-logo">
+          <a href="#">
+            <strong class="company-logo">Forbes</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li><strong>voiture</strong></li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+        <li class="third-logo">
+          <a href="#">
+            <strong class="company-logo">Smaash</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li><strong>Interface utilisateur</strong></li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+        <li class="fourth-logo">
+          <a href="#">
+            <strong class="company-logo">iD-Travel</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li><strong>Nouvelle identité de marque</strong></li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+        <li class="fifth-logo">
+          <a href="#">
+            <strong class="company-logo">fifth-logo</strong>
+            <div class="client-assist">
+              <div class="client-work">
+                <ul>
+                  <li><strong>Our</strong></li>
+                  <li><strong>entreprise</strong></li>
+                </ul>
+              </div><!-- /.client-work -->
+            </div><!-- /.client-assist -->
+          </a>
+        </li>
+      </ul><!-- /.clients-projects -->
+      <br>
+    </section>
+    <br />
 
-    <div class="broker-list top40">
-      <!-- Broker 1 -->
-      <div class="broker-item wow fadeInUp">
-        <h4>IC Markets</h4>
-        <ul>
-          <li>ECN spreads from 0.0 pips</li>
-          <li>High-volume rebates</li>
-          <li>Regulated by ASIC &amp; CySEC</li>
-        </ul>
-        <p>
-          <a href="https://www.icmarkets.com" target="_blank" rel="noopener">Visit IC Markets</a>
-        </p>
-      </div>
-      <!-- Broker 2 -->
-      <div class="broker-item wow fadeInUp">
-        <h4>XM</h4>
-        <ul>
-          <li>Low spreads &amp; zero-commission accounts</li>
-          <li>Offers loyalty program &amp; rebates</li>
-          <li>MT4/MT5 platforms</li>
-        </ul>
-        <p>
-          <a href="https://www.xm.com" target="_blank" rel="noopener">Visit XM</a>
-        </p>
-      </div>
-      <!-- Broker 3 -->
-      <div class="broker-item wow fadeInUp">
-        <h4>Exness</h4>
-        <ul>
-          <li>Flexible leverage up to 1:2000</li>
-          <li>Spread rebate incentives</li>
-          <li>Instant withdrawals</li>
-        </ul>
-        <p>
-          <a href="https://www.exness.com" target="_blank" rel="noopener">Visit Exness</a>
-        </p>
-      </div>
-      <!-- Broker 4 -->
-      <div class="broker-item wow fadeInUp">
-        <h4>HotForex</h4>
-        <ul>
-          <li>Multiple account types</li>
-          <li>Cashback &amp; rebate promotions</li>
-          <li>Wide range of assets (FX, CFDs)</li>
-        </ul>
-        <p>
-          <a href="https://www.hotforex.com" target="_blank" rel="noopener">Visit HotForex</a>
-        </p>
-      </div>
-      <!-- Broker 5 -->
-      <div class="broker-item wow fadeInUp">
-        <h4>FBS</h4>
-        <ul>
-          <li>Popular rebate programs</li>
-          <li>Cent accounts for beginners</li>
-          <li>Promotions &amp; bonus campaigns</li>
-        </ul>
-        <p>
-          <a href="https://fbs.com" target="_blank" rel="noopener">Visit FBS</a>
-        </p>
-      </div>
+    <!-- Banner Placeholder #3 -->
+    <div style="text-align:center; margin: 20px 0;">
+      <!-- Insert your Google AdSense code here -->
+      <p style="border:2px dashed #bbb; padding:10px;">Banner Placeholder #3 (728x90 or 468x60)</p>
     </div>
-  </div>
-</section>
 
-<!-- Banner / AdSense Placeholder #2 -->
-<div class="banner-placeholder">
-  <!-- Insert your AdSense code here -->
-  <p>Banner Placeholder #2 (e.g., 300x250, 728x90, etc.)</p>
-</div>
+    <section class="include-contact">
+      <div class="container">
+        <p class="text-center greyish">
+          Vous voulez inscrire votre entreprise dans la liste ?  
+          <a class="btn btn-large btn-border" href="#contact">Contactez-nous</a>
+        </p>
+        <br />
+        <h2 class="top-margin">Tout ce qu'ils disent</h2>
+        <p class="lead top70">Votre opinion est importante pour nous.</p>
+        <h3 class="top40">Il nous fait du bien de vous faire sentir fiers.</h3>
+        <ul>
+          <li class="col-md-6">
+            <blockquote class="wow animated fadeInLeft">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
+              </p>	
+              <footer class="client" role="author"> MD , fondateur de la Compagnie</footer>
+            </blockquote>
+          </li>
 
-<!-- Education Section -->
-<section class="section">
-  <div class="container">
-    <h2>Forex 101: Key Points</h2>
-    <hr />
-    <div class="row">
-      <div class="col-md-6 wow fadeInLeft">
-        <h3>Basics of Forex Trading</h3>
-        <p>
-          The Forex market is the global marketplace for trading national currencies against one another. <strong>Rebates</strong> allow traders to earn back a percentage of the spread or commission they pay.
-        </p>
-        <p>
-          <a href="https://www.bloomberg.com/markets" target="_blank" rel="noopener">Bloomberg Markets</a> | 
-          <a href="https://www.investing.com/" target="_blank" rel="noopener">Investing.com</a>
-        </p>
-      </div>
-      <div class="col-md-6 wow fadeInRight">
-        <h3>Risks &amp; Responsibility</h3>
-        <p>
-          High leverage can lead to quick gains but also steep losses. Always trade responsibly, maintain a suitable risk management strategy, and consider using demo accounts before live trading.
-        </p>
-      </div>
+          <li class="col-md-6">
+            <blockquote class="wow animated fadeInRight">
+              <p>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s...
+              </p>
+              <footer class="client" role="author"> MD , fondateur de la Compagnie</footer>
+            </blockquote>
+          </li>			
+        </ul><!-- /.testimonials -->
+      </div><!-- /.container -->
+    </section>
+
+    <div class="banner banner-1" role="break">
+      <h2 class="white vertical-center wow animated zoomIn" data-wow-delay="1s">
+        Pratiques de début à la fin
+      </h2>
     </div>
-  </div>
-</section>
-
-<!-- Banner / AdSense Placeholder #3 -->
-<div class="banner-placeholder">
-  <!-- Insert your AdSense code here -->
-  <p>Banner Placeholder #3 (Responsive or custom size)</p>
-</div>
-
-<!-- CTA Section -->
-<div class="section" id="CTA-1">
-  <div class="container">
-    <h2>Ready to Explore These Brokers or Learn More?</h2>
-    <a class="btn" href="#contact">Contact Us</a>
-  </div>
-</div>
-
-<!-- Popup/Modal Trigger -->
-<div class="banner-placeholder" style="margin-top: 40px;">
-  <button class="btn btn-primary" data-toggle="modal" data-target="#adsModal">
-    Open Popup (AdSense/Promo)
-  </button>
-  <p>Example of a Popup Trigger Button</p>
-</div>
-
-<!-- Modal (Popup) for Ads or Announcements -->
-<div class="modal fade" id="adsModal" tabindex="-1" role="dialog" aria-labelledby="adsModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="adsModalLabel">Special Offer / Ad</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">&times;</button>
-      </div>
-      <div class="modal-body">
-        <p>Insert your Google AdSense code or promotional message here.</p>
-        <!-- 
-          e.g., 
-          <ins class="adsbygoogle"
-               style="display:block"
-               data-ad-client="YOUR-ADSENSE-CODE"
-               data-ad-slot="AD-SLOT-ID"
-               data-ad-format="auto"
-               data-full-width-responsive="true"></ins>
-          <script>
-              (adsbygoogle = window.adsbygoogle || []).push({});
-          </script>
-        -->
-      </div>
-      <div class="modal-footer">
-        <button type="button" data-dismiss="modal">Close</button>
-      </div>
+      
+    <section>
+      <div class="container">
+        <h2>Pourquoi nous choisir</h2>
+        <ol class="our-quality">
+          <li class="wow animated zoomIn" data-wow-delay=".1s">
+            <h4>1. Nous sommes Brillant</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+          <li class="wow animated zoomIn" data-wow-delay=".3s">
+            <h4>1. Nous sommes le leader</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+          <li class="wow animated zoomIn" data-wow-delay=".3s">
+            <h4>1. Nous sommes les meilleurs</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+          <li class="wow animated zoomIn" data-wow-delay=".3s">
+            <h4>1. We are boss</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+          <li class="wow animated zoomIn" data-wow-delay=".3s">
+            <h4>1. Nous sommes patron</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+          <li class="wow animated zoomIn" data-wow-delay=".3s">
+            <h4>1. Nous sommes une équipe</h4>
+            <p>
+              Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+            </p>
+          </li>
+        </ol><!-- /.our-quality -->
+      </div><!-- /.container -->
+    </section>
+      
+    <div class="banner banner-2" role="break">
+      <h2 class=" white vertical-center wow animated zoomIn" data-wow-delay="1s">
+        Créativité : Le ciel est la limite
+      </h2>
     </div>
-  </div>
-</div>
+  </div><!-- /.content -->
 
-<!-- Contact Section -->
-<div class="section" id="contact" style="background-color: rgba(0,0,0,0.7); padding: 50px 15px;">
-  <div class="container">
-    <h2>Contact Us</h2>
-    <p>Need more information about brokers, rebates, or disclaimers?</p>
-    <form id="contact-us" method="post" action="contact.php">
-      <div class="row">
-        <div class="col-sm-6 wow fadeInLeft">
-          <input type="text" name="name" id="name" required class="form" placeholder="Name" />
-          <input type="email" name="email" id="email" required class="form" placeholder="Email" />
-          <input type="text" name="subject" id="subject" required class="form" placeholder="Subject" />
+  <!-- Banner Placeholder #4 -->
+  <div style="text-align:center; margin: 20px 0;">
+    <!-- Insert your Google AdSense code here -->
+    <p style="border:2px dashed #bbb; padding:10px;">Banner Placeholder #4 (e.g., 728x90)</p>
+  </div>
+
+  <div id="contact" class="container top-margin">
+    <div class="top-margin"></div>
+    <h2 class="white"> Contactez-nous </h2>
+    <div class="inner contact">
+      <!-- Form Area -->
+      <div class="contact-form">
+        <!-- Form -->
+        <form id="contact-us" method="post" action="contact.php">
+          <!-- Left Inputs -->
+          <div class="col-xs-6 wow animated fadeInLeft">
+            <br>
+            <input type="text" name="name" id="name" required="required" class="form" placeholder="Name" />
+            <input type="email" name="email" id="email" required="required" class="form" placeholder="Email" />
+            <input type="text" name="subject" id="subject" required="required" class="form" placeholder="Subject" />
+          </div><!-- End Left Inputs -->
+          <!-- Right Inputs -->
+          <div class="col-xs-6 wow animated fadeInRight">
+            <br>
+            <textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea>
+          </div><!-- End Right Inputs -->
+          <!-- Bottom Submit -->
+          <div class="relative fullwidth col-xs-12">
+            <button type="submit" id="submit" name="submit" class="form-btn semibold">Envoyer un message</button> 
+            <br />
+          </div><!-- End Bottom Submit -->
+          <div class="clear"></div>
+        </form>
+
+        <!-- Your Mail Message -->
+        <div class="mail-message-area">
+          <!-- Message -->
+          <div class="alert gray-bg mail-message not-visible-message">
+            <strong>Merci !</strong> Votre e-mail a été livré .
+          </div>
         </div>
-        <div class="col-sm-6 wow fadeInRight">
-          <textarea name="message" id="message" class="form textarea" placeholder="Message"></textarea>
-        </div>
-      </div>
-      <div class="text-center" style="margin-top: 15px;">
-        <button type="submit" id="submit" name="submit" class="form-btn semibold">Send Message</button>
-      </div>
-    </form>
+      </div><!-- End Contact Form Area -->
+    </div><!-- End Inner -->
   </div>
-</div>
 
-<!-- Footer -->
-<footer id="site-footer">
-  <div class="container">
-    <div class="row">
-      <div class="col-sm-6">
-        <span>&copy; 2025 ForexRabate.com</span> – We do not provide direct trading or investment services. All rights reserved.
+  <footer>
+    <div class="container">
+      <div>
+        <p role="biography">
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry...
+        </p>
+        <small role="legal">
+          <span>&copy;</span> 2014 tous droits réservés .
+        </small>
       </div>
-      <div class="col-sm-6">
-        <ul class="networks">
-          <li><a href="https://twitter.com" target="_blank" rel="noopener">Twitter</a></li>
-          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
-          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
-          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</footer>
+      <ul class="networks">
+        <li><a href="https://twitter.com/creativekitten"><span class="twitter">Twitter</span></a></li>
+        <li><a href="https://facebook.com/creativekitten"><span class="facebook">Facebook</span></a></li>
+        <li><a href="https://instagram.com/creativekitten"><span class="instagram">Instagram</span></a></li>
+        <li><a href="http://www.linkedin.com/company/creativekitten"><span class="linkedin">LinkedIn</span></a></li>
+      </ul>
+    </div><!-- /.container -->
+  </footer>
 
-<!-- ============= JS SCRIPTS ============= -->
-
-<!-- jQuery -->
-<script src="js/jquery.min.js"></script>
-<!-- Bootstrap JS -->
-<script src="js/bootstrap.min.js"></script>
-<!-- WOW JS -->
-<script src="js/wow.min.js"></script>
-
-<!-- ============= classie.js (ORIGINAL CODE) ============= -->
-<script>
-/*!
- * classie v1.0.0
- * class helper functions
- * from bonzo https://github.com/ded/bonzo
- * MIT license
- * 
- * classie.has( elem, 'my-class' ) -> true/false
- * classie.add( elem, 'my-new-class' )
- * classie.remove( elem, 'my-unwanted-class' )
- * classie.toggle( elem, 'my-class' )
- */
-(function(window) {
-  'use strict';
-  
-  function classReg(className) {
-    return new RegExp("(^|\\s+)" + className + "(\\s+|$)");
-  }
-
-  var hasClass, addClass, removeClass;
-
-  if ('classList' in document.documentElement) {
-    hasClass = function(elem, c) {
-      return elem.classList.contains(c);
-    };
-    addClass = function(elem, c) {
-      elem.classList.add(c);
-    };
-    removeClass = function(elem, c) {
-      elem.classList.remove(c);
-    };
-  } else {
-    hasClass = function(elem, c) {
-      return classReg(c).test(elem.className);
-    };
-    addClass = function(elem, c) {
-      if (!hasClass(elem, c)) {
-        elem.className = elem.className + ' ' + c;
-      }
-    };
-    removeClass = function(elem, c) {
-      elem.className = elem.className.replace(classReg(c), ' ');
-    };
-  }
-
-  function toggleClass(elem, c) {
-    var fn = hasClass(elem, c) ? removeClass : addClass;
-    fn(elem, c);
-  }
-
-  var classie = {
-    hasClass: hasClass,
-    addClass: addClass,
-    removeClass: removeClass,
-    toggleClass: toggleClass,
-    // short names
-    has: hasClass,
-    add: addClass,
-    remove: removeClass,
-    toggle: toggleClass
-  };
-
-  if (typeof define === 'function' && define.amd) {
-    // AMD
-    define(classie);
-  } else {
-    // browser global
-    window.classie = classie;
-  }
-})(window);
-</script>
-<!-- ============= END classie.js ============= -->
-
-<!-- Custom JS: init + header shrink logic using classie -->
-<script>
-  function initHeaderShrink() {
-    window.addEventListener('scroll', function() {
-      var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-          shrinkOn = 100,
-          header = document.querySelector("header");
-      if (distanceY > shrinkOn) {
-        classie.add(header, "smaller");
-      } else {
-        classie.remove(header, "smaller");
-      }
-    });
-  }
-  // Initialize header shrink on load
-  window.onload = initHeaderShrink;
-
-  // Initialize WOW.js
-  new WOW().init();
-
-  // Smooth scroll for anchor links
-  $(function() {
-    $('a[href*=\\#]:not([href=\\#])').click(function() {
-      if (location.pathname.replace(/^\//,'') === this.pathname.replace(/^\//,'') 
-         && location.hostname === this.hostname) {
-        var target = $(this.hash);
-        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-        if (target.length) {
-          $('html,body').animate({ scrollTop: target.offset().top }, 1000);
-          return false;
+  <!-- JS at the bottom of the body for faster load -->
+  <script src="../js/vendor/jquery-1.10.1.min.js"></script>
+  <script src="../js/bootstrap.min.js"></script>
+  <script src="../js/wow.min.js"></script>
+  <script src="../js/classie.js"></script>
+  <script>
+    function init() {
+      window.addEventListener('scroll', function(e){
+        var distanceY = window.pageYOffset || document.documentElement.scrollTop,
+            shrinkOn = 300,
+            header = document.querySelector("header");
+        if (distanceY > shrinkOn) {
+          classie.add(header,"smaller");
+        } else {
+          if (classie.has(header,"smaller")) {
+            classie.remove(header,"smaller");
+          }
         }
-      }
+      });
+    }
+    window.onload = init();
+  </script>
+  <script type="text/javascript">
+    new WOW().init();
+  </script>
+  <script type="text/javascript">
+    $(function() {
+      $('a[href*=#]:not([href=#])').click(function() {
+        if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+            && location.hostname == this.hostname) {
+          var target = $(this.hash);
+          target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+          if (target.length) {
+            $('html,body').animate({
+              scrollTop: target.offset().top
+            }, 1000);
+            return false;
+          }
+        }
+      });
     });
-  });
-</script>
+  </script>
 </body>
 </html>
