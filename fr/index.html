@@ -7,28 +7,28 @@
 <!--<![endif]-->
 
 <head>
-  <title>ForexRabate.com – Best Forex Rebates, TradingView Calendars & Dukascopy News</title>
+  <title>ForexRabate.com – Best Forex Rebates, TradingView & Dukascopy News</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <!-- Enhanced SEO Meta Tags -->
-  <meta name="description" content="ForexRabate.com helps you find top Forex rebate programs, track live events with TradingView, and stay informed with Dukascopy news. Maximize your profits using advanced strategies, real-time data, and professional guidance. We feature brokers like IC Markets, XM, Exness, HotForex, and FBS.">
-  <meta name="keywords" content="forex, forex rebate, broker rebates, IC Markets, XM, Exness, HotForex, FBS, trading strategies, tradingview calendar, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading">
+  <meta name="description" content="ForexRabate.com helps you find top Forex rebate programs, track markets via TradingView (TickerTape, advanced charts, heatmap), and stay informed with Dukascopy news. We feature brokers like IC Markets, XM, Exness, HotForex, and FBS. Maximize your Forex profits.">
+  <meta name="keywords" content="forex, forex rebate, broker rebates, IC Markets, XM, Exness, HotForex, FBS, tradingview ticker, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading">
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
-  <meta property="og:title" content="ForexRabate.com – Best Forex Rebates & Live Market Events" />
-  <meta property="og:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS), stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
+  <meta property="og:title" content="ForexRabate.com – Best Forex Rebates & Markets via TradingView" />
+  <meta property="og:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS). Track live quotes, events, ticker tape, and news from TradingView & Dukascopy for your best FX trading experience.">
   <meta property="og:image" content="images/logo.png" />
   <meta property="og:url" content="https://forexrabate.com" />
   <meta property="og:type" content="website" />
 
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="ForexRabate.com – Best Forex Rebates & Live Market Events">
-  <meta name="twitter:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS), stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
+  <meta name="twitter:title" content="ForexRabate.com – Best Forex Rebates & Markets via TradingView">
+  <meta name="twitter:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS). Track live quotes, events, ticker tape, and news from TradingView & Dukascopy for your best FX trading experience.">
   <meta name="twitter:image" content="images/logo.png">
 
   <!-- Structured Data (JSON-LD) for Organization & WebSite -->
@@ -122,23 +122,25 @@
 }
   </script>
 
-  <!-- Advanced Chart code (AAPL) -->
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
-  {
-  "autosize": true,
-  "symbol": "NASDAQ:AAPL",
-  "interval": "D",
-  "timezone": "Etc/UTC",
-  "theme": "dark",
-  "style": "1",
-  "locale": "en",
-  "allow_symbol_change": true,
-  "calendar": false,
-  "support_host": "https://www.tradingview.com"
-}
-  </script>
+  <!-- TickerTape (Dark) - to appear inside the header below the menu -->
+  <style>
+    .ticker-container {
+      max-width: 100%;
+      background: #1f232a; 
+      margin-top: 60px; /* so it sits below the nav */
+      text-align: center;
+      padding: 10px 0;
+    }
+    .ticker-container .tradingview-widget-container {
+      margin: 0 auto;
+      max-width: 1000px;
+    }
+    .ticker-container h4 {
+      color: #fff;
+      margin-bottom: 5px;
+    }
+  </style>
 
-  <!-- Fonts & CSS -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
@@ -195,7 +197,7 @@
       color: #fff;
     }
 
-    /* Popup modal for random ads */
+    /* Popup modal for random ad */
     .popup-overlay {
       position: fixed;
       top:0; left:0; 
@@ -243,10 +245,10 @@
     </div>
   </header>
 
-  <!-- TickerTape hneď pod menu -->
-  <div style="margin-top:70px; max-width:100%; text-align:center;">
-    <!-- TradingView TickerTape code -->
-    <div class="tradingview-widget-container" style="max-width:100%; margin:0 auto;">
+  <!-- TickerTape container - right below the nav -->
+  <div class="ticker-container">
+    <h4>Live Market Ticker</h4>
+    <div class="tradingview-widget-container">
       <div class="tradingview-widget-container__widget"></div>
       <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
       {
@@ -291,7 +293,7 @@
   </div>
 
   <!-- AD Placeholder (Sidebar) -->
-  <div style="position:absolute; right:0; top:300px; width:160px; z-index:999;">
+  <div style="position:absolute; right:0; top:360px; width:160px; z-index:999;">
     <p style="border:2px dashed #ccc; padding:10px; background:#fff;">
       Sidebar Ad Placeholder<br>(160x600)
     </p>
@@ -409,69 +411,7 @@
     </div>
   </div>
 
-  <!-- Our Experts, Our Info, ... (rest of sections remain the same) -->
-  <div class="section" id="members">
-    <div class="container">
-      <h2>Our Experts</h2>
-      <hr>
-      <p class="lead-creative-banner">
-        Our team is made up of experienced traders and financial analysts who can help you access rebates and develop effective Forex trading strategies.
-      </p>
-      <div class="row">
-        <div class="col-md-4">
-          <figure class="wow animated fadeInLeft">
-            <img class="border-img img-responsive center-block" src="images/Reza.jpg" alt="John" width="280" height="280">
-          </figure>
-          <div class="imgcaption">
-            <strong>John <span class="name">Smith</span></strong>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <figure class="wow animated fadeInDown">
-            <img class="border-img img-responsive center-block" src="images/jewel.jpg" alt="Jane" width="280" height="280">
-          </figure>
-          <div class="imgcaption">
-            <strong>Jane <span class="name">Miller</span></strong>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <figure class="wow animated fadeInRight">
-            <img class="border-img img-responsive center-block" src="images/Reza.jpg" alt="Reza" width="280" height="280">
-          </figure>
-          <div class="imgcaption">
-            <strong>Reza <span class="name">Ali</span></strong>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div><!-- members -->
-
-  <div class="section" id="our-info">
-    <div class="container">
-      <h2>What We Offer</h2>
-      <hr />
-      <div class="row">
-        <div class="col-sm-6 wow animated fadeInLeft">
-          <figure>
-            <img class="z-hover img-responsive" src="images/pc1.jpg" alt="Forex trading">
-          </figure>
-          <h4>1. Educational Content</h4>
-          <p class="function-text">
-            Our articles and guides provide detailed information on how to open buy/sell positions, identify support/resistance levels, and effectively manage risk. Trade with confidence.
-          </p>
-        </div>
-        <div class="col-sm-6 wow animated fadeInRight">
-          <figure>
-            <img class="z-hover img-responsive" src="images/pc2.jpg" alt="Rebate">
-          </figure>
-          <h4>2. Forex Rebates</h4>
-          <p class="function-text">
-            We bring you exclusive rebate programs and partner offers that reduce your trading costs. The more you trade, the higher your potential rebate.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div><!-- our-info -->
+  <!-- Our Experts, Our Info, ... (rest sections) -->
 
   <!-- Banner Placeholder #2 -->
   <div style="text-align:center; margin: 20px 0;">
@@ -499,9 +439,9 @@
                     { "name": "FOREXCOM:SPXUSD", "displayName": "S&P 500 Index" },
                     { "name": "FOREXCOM:NSXUSD", "displayName": "US 100 Cash CFD" },
                     { "name": "FOREXCOM:DJI",     "displayName": "Dow Jones Industrial Average Index" },
-                    { "name": "INDEX:NKY",     "displayName": "Japan 225" },
-                    { "name": "INDEX:DEU40",   "displayName": "DAX Index" },
-                    { "name": "FOREXCOM:UKXGBP","displayName": "FTSE 100 Index" }
+                    { "name": "INDEX:NKY",       "displayName": "Japan 225" },
+                    { "name": "INDEX:DEU40",     "displayName": "DAX Index" },
+                    { "name": "FOREXCOM:UKXGBP", "displayName": "FTSE 100 Index" }
                   ]
                 },
                 {
