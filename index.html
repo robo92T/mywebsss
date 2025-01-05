@@ -63,7 +63,7 @@
   }
   </script>
 
-  <!-- TickerTape WIDGET CODE (placed in head so it loads early) -->
+  <!-- Second TickerTape WIDGET CODE: pre prvý banner -->
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
   {
   "symbols": [
@@ -96,11 +96,112 @@
 }
   </script>
 
+  <!-- Symbol Overview (Apple, Google, MSFT, EURUSD, GOLD) goes under the first banner -->
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
+  {
+  "symbols": [
+    [
+      "Apple",
+      "AAPL|1D"
+    ],
+    [
+      "Google",
+      "GOOGL|1D"
+    ],
+    [
+      "Microsoft",
+      "MSFT|1D"
+    ],
+    [
+      "CAPITALCOM:EURUSD|1D"
+    ],
+    [
+      "CAPITALCOM:GOLD|1D"
+    ]
+  ],
+  "chartOnly": false,
+  "width": "100%",
+  "height": "100%",
+  "locale": "en",
+  "colorTheme": "dark",
+  "autosize": true,
+  "showVolume": false,
+  "showMA": false,
+  "hideDateRanges": false,
+  "hideMarketStatus": false,
+  "hideSymbolLogo": false,
+  "scalePosition": "right",
+  "scaleMode": "Normal",
+  "fontFamily": "-apple-system, BlinkMacSystemFont, Trebuchet MS, Roboto, Ubuntu, sans-serif",
+  "fontSize": "10",
+  "noTimeScale": false,
+  "valuesTracking": "1",
+  "changeMode": "price-and-percent",
+  "chartType": "area",
+  "maLineColor": "#2962FF",
+  "maLineWidth": 1,
+  "maLength": 9,
+  "headerFontSize": "medium",
+  "lineWidth": 2,
+  "lineType": 0,
+  "dateRanges": [
+    "1d|1",
+    "1m|30",
+    "3m|60",
+    "12m|1D",
+    "60m|1W",
+    "all|1M"
+  ]
+}
+  </script>
+
   <!-- Fonts & CSS -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700">
   <link rel="stylesheet" href="css/bootstrap.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/animate.min.css">
+
+  <style>
+    /* Sivé pozadie -> biele písmo */
+    .grey-bg {
+      background-color: #333;  /* tmavosivá */
+      color: #fff;            /* biela */
+      padding: 40px 15px;
+    }
+    .grey-bg h2, .grey-bg h3, .grey-bg p, .grey-bg a, .grey-bg .btn,
+    .grey-bg li, .grey-bg .function-text {
+      color: #fff !important;
+    }
+
+    /* Accordion style for buy/sell/short/long/TP/SL/TrailingStop */
+    .forex-accordion {
+      margin: 40px 0;
+    }
+    .forex-accordion button {
+      background: #444;
+      color: #fff;
+      cursor: pointer;
+      padding: 15px;
+      width: 100%;
+      text-align: left;
+      border: none;
+      outline: none;
+      transition: background 0.3s;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    .forex-accordion button:hover {
+      background: #555;
+    }
+    .forex-panel {
+      background: #222;
+      color: #ccc;
+      padding: 0 15px;
+      display: none;
+      overflow: hidden;
+      margin-bottom: 15px;
+    }
+  </style>
 </head>
 
 <body>
@@ -131,14 +232,23 @@
     </div>
   </div>
 
-  <!-- TradingView TickerTape (Loaded from HEAD script) -->
+  <!-- TickerTape widget (2nd) hneď pred prvým bannerom -->
   <div class="tradingview-widget-container" style="max-width:100%; margin:10px auto; text-align:center;">
-    <!-- The widget container from the HEAD script will render here -->
     <div class="tradingview-widget-container__widget"></div>
   </div>
 
-  <!-- Side Banner Placeholder #1 (e.g., 160x600) -->
-  <div style="position:absolute; right:0; top:200px; width:160px; z-index:999;">
+  <!-- FIRST BANNER Placeholder -->
+  <div style="text-align:center; margin: 20px 0;">
+    <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #0 (e.g. 728x90) - "Before first banner"</p>
+  </div>
+
+  <!-- Symbol Overview Widget -->
+  <div class="tradingview-widget-container" style="background:#222; color:#fff; padding: 20px;">
+    <div class="tradingview-widget-container__widget" style="min-height:350px;"></div>
+  </div>
+
+  <!-- Side Banner Placeholder #1 (160x600) -->
+  <div style="position:absolute; right:0; top:300px; width:160px; z-index:999;">
     <!-- Replace with AdSense Code -->
     <p style="border:2px dashed #ccc; padding:10px; background:#fff;">
       Sidebar Ad Placeholder #1<br>(160x600)
@@ -153,7 +263,7 @@
       <div class="row">
         <!-- Broker 1: IC Markets -->
         <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
-          <img src="images/brokers/icmarkets.png" alt="IC Markets Logo" class="img-responsive center-block" style="max-height:80px;">
+          <img src="https://icmarkets.com/themes/icmarkets/images/logo.svg" alt="IC Markets Logo" class="img-responsive center-block" style="max-height:80px;">
           <h4>IC Markets</h4>
           <p style="min-height:80px;">
             Tight ECN spreads from 0.0 pips, fast execution, and top-tier regulation.
@@ -164,7 +274,7 @@
         </div>
         <!-- Broker 2: XM -->
         <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
-          <img src="images/brokers/xm.png" alt="XM Logo" class="img-responsive center-block" style="max-height:80px;">
+          <img src="https://www.xm.com/images/xm_logo.svg" alt="XM Logo" class="img-responsive center-block" style="max-height:80px;">
           <h4>XM</h4>
           <p style="min-height:80px;">
             Wide range of account types, low spreads, and user-friendly platforms.
@@ -175,7 +285,7 @@
         </div>
         <!-- Broker 3: Exness -->
         <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
-          <img src="images/brokers/exness.png" alt="Exness Logo" class="img-responsive center-block" style="max-height:80px;">
+          <img src="https://www.exness.com/etc.clientlibs/exness/clientlibs/clientlib-base/resources/logo-exness.svg" alt="Exness Logo" class="img-responsive center-block" style="max-height:80px;">
           <h4>Exness</h4>
           <p style="min-height:80px;">
             Flexible leverage up to 1:2000, instant withdrawals, and rebate-friendly options.
@@ -186,7 +296,7 @@
         </div>
         <!-- Broker 4: HotForex -->
         <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
-          <img src="images/brokers/hotforex.png" alt="HotForex Logo" class="img-responsive center-block" style="max-height:80px;">
+          <img src="https://www.hfm.com/assets/img/logos/hfm_logo_white2.svg" alt="HotForex Logo" class="img-responsive center-block" style="background:#000; max-height:60px; padding:5px;">
           <h4>HotForex</h4>
           <p style="min-height:80px;">
             Cashback promotions, multiple licenses, and a variety of trading instruments.
@@ -197,7 +307,7 @@
         </div>
         <!-- Broker 5: FBS -->
         <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
-          <img src="images/brokers/fbs.png" alt="FBS Logo" class="img-responsive center-block" style="max-height:80px;">
+          <img src="https://cdn.fbs.company/banners/fbs-logo.svg" alt="FBS Logo" class="img-responsive center-block" style="max-height:80px;">
           <h4>FBS</h4>
           <p style="min-height:80px;">
             Cent accounts for beginners, attractive bonuses, and global presence.
@@ -209,6 +319,53 @@
       </div>
     </div>
   </div><!-- #best-brokers -->
+
+  <!-- Grey background for "Forex Keywords" -->
+  <div class="grey-bg">
+    <div class="container">
+      <h2>Forex Keywords Explained</h2>
+      <hr>
+      <p>
+        In Forex trading, certain terms come up frequently. Click on any keyword below to see its explanation:
+      </p>
+      <div class="forex-accordion">
+        <button>Buy</button>
+        <div class="forex-panel">
+          <p>A buy (long) position indicates you expect the currency pair to increase in value.</p>
+        </div>
+
+        <button>Sell</button>
+        <div class="forex-panel">
+          <p>A sell (short) position indicates you expect the currency pair to decrease in value.</p>
+        </div>
+
+        <button>Short</button>
+        <div class="forex-panel">
+          <p>Short selling involves borrowing the asset, selling it, then buying it back later at a lower price to profit from the decline.</p>
+        </div>
+
+        <button>Long</button>
+        <div class="forex-panel">
+          <p>Going long means you're opening a position where you profit if the asset's price rises.</p>
+        </div>
+
+        <button>TP (Take Profit)</button>
+        <div class="forex-panel">
+          <p>A preset price level where your trade closes automatically in profit.</p>
+        </div>
+
+        <button>SL (Stop Loss)</button>
+        <div class="forex-panel">
+          <p>A protective order to limit potential losses if the market moves against you.</p>
+        </div>
+
+        <button>Trailing Stop</button>
+        <div class="forex-panel">
+          <p>A stop-loss order that automatically adjusts to lock in more profit if the asset's price moves in your favor.</p>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <div class="section" id="members">
     <div class="container">
@@ -278,345 +435,127 @@
     <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #2 (728x90)</p>
   </div>
 
-  <!-- TradingView MARKET QUOTES WIDGET -->
+  <!-- TradingView MARKET QUOTES + EVENT CALENDAR side by side -->
   <div class="section" style="background:#131722; padding:20px 0;">
     <div class="container">
-      <h3 class="white text-center">Market Quotes</h3>
-      <div class="tradingview-widget-container" style="margin:0 auto; max-width:550px;">
-        <div class="tradingview-widget-container__widget"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
-        {
-          "width": 550,
-          "height": 550,
-          "symbolsGroups": [
+      <div class="row">
+        <!-- Left column: Market Quotes -->
+        <div class="col-md-6">
+          <h3 class="white text-center">Market Quotes</h3>
+          <div class="tradingview-widget-container" style="margin:0 auto; max-width:550px;">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
             {
-              "name": "Indices",
-              "originalName": "Indices",
-              "symbols": [
-                { "name": "FOREXCOM:SPXUSD", "displayName": "S&P 500 Index" },
-                { "name": "FOREXCOM:NSXUSD", "displayName": "US 100 Cash CFD" },
-                { "name": "FOREXCOM:DJI", "displayName": "Dow Jones Industrial Average Index" },
-                { "name": "INDEX:NKY", "displayName": "Japan 225" },
-                { "name": "INDEX:DEU40", "displayName": "DAX Index" },
-                { "name": "FOREXCOM:UKXGBP", "displayName": "FTSE 100 Index" }
-              ]
-            },
-            {
-              "name": "Futures",
-              "originalName": "Futures",
-              "symbols": [
-                { "name": "CME_MINI:ES1!", "displayName": "S&P 500" },
-                { "name": "CME:6E1!", "displayName": "Euro" },
-                { "name": "COMEX:GC1!", "displayName": "Gold" },
-                { "name": "NYMEX:CL1!", "displayName": "WTI Crude Oil" },
-                { "name": "NYMEX:NG1!", "displayName": "Gas" },
-                { "name": "CBOT:ZC1!", "displayName": "Corn" }
-              ]
-            },
-            {
-              "name": "Bonds",
-              "originalName": "Bonds",
-              "symbols": [
-                { "name": "CBOT:ZB1!", "displayName": "T-Bond" },
-                { "name": "CBOT:UB1!", "displayName": "Ultra T-Bond" },
-                { "name": "EUREX:FGBL1!", "displayName": "Euro Bund" },
-                { "name": "EUREX:FBTP1!", "displayName": "Euro BTP" },
-                { "name": "EUREX:FGBM1!", "displayName": "Euro BOBL" }
-              ]
-            },
-            {
-              "name": "Forex",
-              "originalName": "Forex",
-              "symbols": [
-                { "name": "FX:EURUSD", "displayName": "EUR to USD" },
-                { "name": "FX:GBPUSD", "displayName": "GBP to USD" },
-                { "name": "FX:USDJPY", "displayName": "USD to JPY" },
-                { "name": "FX:USDCHF", "displayName": "USD to CHF" },
-                { "name": "FX:AUDUSD", "displayName": "AUD to USD" },
-                { "name": "FX:USDCAD", "displayName": "USD to CAD" }
-              ]
+              "width": 550,
+              "height": 550,
+              "symbolsGroups": [
+                {
+                  "name": "Indices",
+                  "originalName": "Indices",
+                  "symbols": [
+                    { "name": "FOREXCOM:SPXUSD", "displayName": "S&P 500 Index" },
+                    { "name": "FOREXCOM:NSXUSD", "displayName": "US 100 Cash CFD" },
+                    { "name": "FOREXCOM:DJI", "displayName": "Dow Jones Industrial Average Index" },
+                    { "name": "INDEX:NKY", "displayName": "Japan 225" },
+                    { "name": "INDEX:DEU40", "displayName": "DAX Index" },
+                    { "name": "FOREXCOM:UKXGBP", "displayName": "FTSE 100 Index" }
+                  ]
+                },
+                {
+                  "name": "Futures",
+                  "originalName": "Futures",
+                  "symbols": [
+                    { "name": "CME_MINI:ES1!", "displayName": "S&P 500" },
+                    { "name": "CME:6E1!", "displayName": "Euro" },
+                    { "name": "COMEX:GC1!", "displayName": "Gold" },
+                    { "name": "NYMEX:CL1!", "displayName": "WTI Crude Oil" },
+                    { "name": "NYMEX:NG1!", "displayName": "Gas" },
+                    { "name": "CBOT:ZC1!", "displayName": "Corn" }
+                  ]
+                },
+                {
+                  "name": "Bonds",
+                  "originalName": "Bonds",
+                  "symbols": [
+                    { "name": "CBOT:ZB1!", "displayName": "T-Bond" },
+                    { "name": "CBOT:UB1!", "displayName": "Ultra T-Bond" },
+                    { "name": "EUREX:FGBL1!", "displayName": "Euro Bund" },
+                    { "name": "EUREX:FBTP1!", "displayName": "Euro BTP" },
+                    { "name": "EUREX:FGBM1!", "displayName": "Euro BOBL" }
+                  ]
+                },
+                {
+                  "name": "Forex",
+                  "originalName": "Forex",
+                  "symbols": [
+                    { "name": "FX:EURUSD", "displayName": "EUR to USD" },
+                    { "name": "FX:GBPUSD", "displayName": "GBP to USD" },
+                    { "name": "FX:USDJPY", "displayName": "USD to JPY" },
+                    { "name": "FX:USDCHF", "displayName": "USD to CHF" },
+                    { "name": "FX:AUDUSD", "displayName": "AUD to USD" },
+                    { "name": "FX:USDCAD", "displayName": "USD to CAD" }
+                  ]
+                }
+              ],
+              "showSymbolLogo": true,
+              "isTransparent": false,
+              "colorTheme": "dark",
+              "locale": "en",
+              "backgroundColor": "#131722"
             }
-          ],
-          "showSymbolLogo": true,
-          "isTransparent": false,
-          "colorTheme": "dark",
+            </script>
+          </div>
+        </div><!-- /.col-md-6 -->
+
+        <!-- Right column: Event Calendar -->
+        <div class="col-md-6">
+          <h3 class="white text-center">Events Calendar</h3>
+          <div class="tradingview-widget-container" style="margin:0 auto; max-width:500px;">
+            <div class="tradingview-widget-container__widget"></div>
+            <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
+            {
+              "colorTheme": "light",
+              "isTransparent": false,
+              "width": "400",
+              "height": "550",
+              "locale": "en",
+              "importanceFilter": "-1,0,1",
+              "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
+            }
+            </script>
+          </div>
+        </div><!-- /.col-md-6 -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Heatmap (Stock Heatmap) -->
+  <div class="section" style="background:#1F232A; padding:40px;">
+    <div class="container">
+      <h3 class="white text-center">TradingView Stock Heatmap</h3>
+      <div class="tradingview-widget-container" style="width:100%; height:500px;">
+        <div class="tradingview-widget-container__widget" style="min-height:500px;"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+        {
+          "exchanges": [],
+          "dataSource": "SPX500",
+          "grouping": "sector",
+          "blockSize": "market_cap_basic",
+          "blockColor": "change",
           "locale": "en",
-          "backgroundColor": "#131722"
+          "symbolUrl": "",
+          "colorTheme": "dark",
+          "hasTopBar": false,
+          "isDataSetEnabled": false,
+          "isZoomEnabled": true,
+          "hasSymbolTooltip": true,
+          "isMonoSize": false,
+          "width": "100%",
+          "height": "100%"
         }
         </script>
       </div>
     </div>
-  </div>
-
-  <div class="section" id="our-service">
-    <div class="container">
-      <h3>Key Services</h3>
-      <div class="row">
-        <div class="col-md-3 wow animated zoomIn">
-          <ul>
-            <li class="service-list"><strong>Market Analysis</strong></li>
-            <li class="service-list"><strong>Buy/Sell Signals</strong></li>
-            <li class="service-list"><strong>Rebate Programs</strong></li>
-            <li class="service-list"><strong>Beginner Courses</strong></li>
-            <li class="service-list"><strong>Professional Consulting</strong></li>
-          </ul>
-        </div>
-        <div class="col-md-3 wow animated zoomIn">
-          <ul>
-            <li class="service-list"><strong>In-depth Research</strong></li>
-            <li class="service-list"><strong>Webinars &amp; Live Analyses</strong></li>
-            <li class="service-list"><strong>Stop-Loss / Take-Profit Tips</strong></li>
-            <li class="service-list"><strong>Technical Analysis</strong></li>
-            <li class="service-list"><strong>Financial Management</strong></li>
-          </ul>
-        </div>
-        <div class="col-md-3 wow animated zoomIn">
-          <ul>
-            <li class="service-list"><strong>Profit/Loss Calculator</strong></li>
-            <li class="service-list"><strong>Hedging Tools</strong></li>
-            <li class="service-list"><strong>Trading Psychology</strong></li>
-            <li class="service-list"><strong>MT4/MT5 Guides</strong></li>
-            <li class="service-list"><strong>Copy-Trading</strong></li>
-          </ul>
-        </div>
-        <div class="col-md-3 wow animated zoomIn">
-          <ul>
-            <li class="service-list"><strong>Economic Calendars</strong></li>
-            <li class="service-list"><strong>Trading Strategies</strong></li>
-            <li class="service-list"><strong>Daily Forecasts</strong></li>
-            <li class="service-list"><strong>Market Volatility</strong></li>
-            <li class="service-list"><strong>Latest FX News</strong></li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div><!-- our-service -->
-
-  <div class="section" id="CTA-1">
-    <div class="container">
-      <h2 class="white">Got Questions About Forex or Rebates?</h2>
-      <div class="text-center">
-        <a class="btn btn-large btn-border" href="#contact">Contact Us</a>
-      </div>
-    </div>
-  </div>
-
-  <div class="content">
-    <section class="clients-section">
-      <div class="container">
-        <h2>Our Partners</h2>
-        <hr style="margin-bottom: 46px;">
-      </div>
-      <ul class="clients-projects">
-        <li class="first-logo">
-          <a href="#">
-            <strong class="company-logo">FXCorp</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li>New brand for a Forex broker</li>
-                  <li>User interface management</li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="first-logo">
-          <a href="#">
-            <strong class="company-logo">Citi</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li>Investment platform solutions</li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="second-logo">
-          <a href="#">
-            <strong class="company-logo">Forbes</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li><strong>Financial partnership</strong></li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="third-logo">
-          <a href="#">
-            <strong class="company-logo">Smaash</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li><strong>Forex User Interface</strong></li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="fourth-logo">
-          <a href="#">
-            <strong class="company-logo">iD-TravelFX</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li><strong>FX Travel Strategies</strong></li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-        <li class="fifth-logo">
-          <a href="#">
-            <strong class="company-logo">TradeWorld</strong>
-            <div class="client-assist">
-              <div class="client-work">
-                <ul>
-                  <li><strong>API Integration</strong></li>
-                  <li><strong>ForexRabate Partners</strong></li>
-                </ul>
-              </div>
-            </div>
-          </a>
-        </li>
-      </ul><!-- /.clients-projects -->
-      <br>
-    </section>
-    <br />
-    <section class="include-contact">
-      <div class="container">
-        <p class="text-center greyish">
-          Want to become one of our partners?
-          <a class="btn btn-large btn-border" href="#contact">Contact Us</a>
-        </p>
-        <br />
-        <h2 class="top-margin">Reviews of Our Services</h2>
-        <hr>
-        <p class="lead top70">Feedback from our traders is vital to us.</p>
-        <h3 class="top40">It helps us improve and maintain high standards.</h3>
-        <ul>
-          <li class="col-md-6">
-            <blockquote class="wow animated fadeInLeft">
-              <p>
-                “Thanks to ForexRabate.com, I discovered great rebate programs that helped reduce trading costs on every order. Their buy/sell strategy advice is straightforward and truly boosts profits.”
-              </p>
-              <footer class="client">David, independent trader</footer>
-            </blockquote>
-          </li>
-          <li class="col-md-6">
-            <blockquote class="wow animated fadeInRight">
-              <p>
-                “Excellent service and an analytical approach! Monitoring key economic data and receiving subsequent buy/sell recommendations helped me manage my portfolio more effectively.”
-              </p>
-              <footer class="client">Anna, beginner Forex trader</footer>
-            </blockquote>
-          </li>
-        </ul><!-- /.testimonials -->
-      </div><!-- /.container -->
-    </section>
-  </div><!-- /.content -->
-
-  <!-- Another side banner placeholder -->
-  <div style="position:absolute; right:0; top:600px; width:160px; z-index:999;">
-    <!-- Replace with AdSense Code -->
-    <p style="border:2px dashed #ccc; padding:10px; background:#fff;">
-      Sidebar Ad Placeholder #2<br>(160x600)
-    </p>
-  </div>
-
-  <div class="section" id="banner-3">
-    <div class="container">
-      <h2 class="white wow animated zoomIn" data-wow-delay="1s">
-        Best Forex Practices <br />from Start to Finish
-      </h2>
-    </div>
-  </div>
-
-  <div class="section" id="branding">
-    <div class="container">
-      <h2>Why Choose Us?</h2>
-      <hr />
-      <div class="row">
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>1. Expertise</h4>
-          <p>
-            Our experts have years of Forex experience, excel in setting buy/sell positions, risk management, and finding the best rebate offers.
-          </p>
-        </div>
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>2. Unique Partnerships</h4>
-          <p>
-            Through collaborations with top brokers, we can offer exclusive rebate programs you won't find elsewhere.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>3. Wide Community</h4>
-          <p>
-            Hundreds of traders consult us daily for advice and guides. Our community shares tips and successful strategies with each other.
-          </p>
-        </div>
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>4. Top-notch Support</h4>
-          <p>
-            Whether you're an advanced trader or just starting out, we're here to help. Our support team is available 24/7.
-          </p>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>5. Added Value</h4>
-          <p>
-            Our analytical reports, educational materials, and real-time event tracking empower you to earn consistently while reducing risk.
-          </p>
-        </div>
-        <div class="col-sm-6 wow animated zoomIn" data-wow-delay=".3s">
-          <h4>6. Continuous Innovation</h4>
-          <p>
-            We constantly learn and explore new ways to streamline your trading experience. We follow global trends and emerging technologies.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- Banner Placeholder #3 -->
-  <div style="text-align:center; margin: 20px 0;">
-    <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #3 (Responsive or custom size)</p>
-  </div>
-
-  <div class="section" id="banner-4">
-    <div class="container">
-      <h2 class="white wow animated zoomIn" data-wow-delay="1s">
-        Forex Trading:<br />No Limits to Creativity
-      </h2>
-    </div>
-  </div>
-
-  <!-- TradingView Events Calendar -->
-  <div class="container" style="margin-top:30px;">
-    <h3>TradingView Events Calendar</h3>
-    <p>Stay updated with global market events right here. Filter by importance and region to stay on top of crucial announcements.</p>
-    <!-- TradingView Widget BEGIN -->
-    <div class="tradingview-widget-container">
-      <div class="tradingview-widget-container__widget"></div>
-      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-events.js" async>
-      {
-        "colorTheme": "light",
-        "isTransparent": false,
-        "width": "400",
-        "height": "700",
-        "locale": "en",
-        "importanceFilter": "-1,0,1",
-        "countryFilter": "ar,au,br,ca,cn,fr,de,in,id,it,jp,kr,mx,ru,sa,za,tr,gb,us,eu"
-      }
-      </script>
-    </div>
-    <!-- TradingView Widget END -->
   </div>
 
   <!-- Dukascopy News Widget -->
@@ -703,6 +642,20 @@
             classie.remove(header,"smaller");
           }
         }
+      });
+
+      // Accordion logic
+      var accordions = document.querySelectorAll('.forex-accordion button');
+      accordions.forEach(function(btn){
+        btn.addEventListener('click', function(){
+          this.classList.toggle('active');
+          var panel = this.nextElementSibling;
+          if(panel.style.display === 'block'){
+            panel.style.display = 'none';
+          } else {
+            panel.style.display = 'block';
+          }
+        });
       });
     }
     window.onload = init();
