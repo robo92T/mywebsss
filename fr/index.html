@@ -63,40 +63,7 @@
   }
   </script>
 
-  <!-- Second TickerTape WIDGET CODE: pre prvý banner -->
-  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
-  {
-  "symbols": [
-    {
-      "proName": "FOREXCOM:SPXUSD",
-      "title": "S&P 500 Index"
-    },
-    {
-      "proName": "FOREXCOM:NSXUSD",
-      "title": "US 100 Cash CFD"
-    },
-    {
-      "proName": "FX_IDC:EURUSD",
-      "title": "EUR to USD"
-    },
-    {
-      "proName": "BITSTAMP:BTCUSD",
-      "title": "Bitcoin"
-    },
-    {
-      "proName": "BITSTAMP:ETHUSD",
-      "title": "Ethereum"
-    }
-  ],
-  "showSymbolLogo": true,
-  "isTransparent": false,
-  "displayMode": "adaptive",
-  "colorTheme": "dark",
-  "locale": "en"
-}
-  </script>
-
-  <!-- Symbol Overview (Apple, Google, MSFT, EURUSD, GOLD) goes under the first banner -->
+  <!-- Symbol Overview (Apple, Google, MSFT, EURUSD, GOLD) -->
   <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-symbol-overview.js" async>
   {
   "symbols": [
@@ -155,6 +122,22 @@
 }
   </script>
 
+  <!-- Advanced Chart code (AAPL) -->
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-advanced-chart.js" async>
+  {
+  "autosize": true,
+  "symbol": "NASDAQ:AAPL",
+  "interval": "D",
+  "timezone": "Etc/UTC",
+  "theme": "dark",
+  "style": "1",
+  "locale": "en",
+  "allow_symbol_change": true,
+  "calendar": false,
+  "support_host": "https://www.tradingview.com"
+}
+  </script>
+
   <!-- Fonts & CSS -->
   <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Merriweather:400,700">
   <link rel="stylesheet" href="css/bootstrap.css">
@@ -164,8 +147,8 @@
   <style>
     /* Sivé pozadie -> biele písmo */
     .grey-bg {
-      background-color: #333;  /* tmavosivá */
-      color: #fff;            /* biela */
+      background-color: #333;
+      color: #fff;
       padding: 40px 15px;
     }
     .grey-bg h2, .grey-bg h3, .grey-bg p, .grey-bg a, .grey-bg .btn,
@@ -201,6 +184,47 @@
       overflow: hidden;
       margin-bottom: 15px;
     }
+
+    /* Zvýšená výška heatmap */
+    .heatmap-section {
+      background: #1F232A;
+      padding: 40px;
+      min-height: 700px; /* viac miesta pre heatmap */
+    }
+    .heatmap-section h3 {
+      color: #fff;
+    }
+
+    /* Popup modal for random ads */
+    .popup-overlay {
+      position: fixed;
+      top:0; left:0; 
+      width:100%; height:100%;
+      background: rgba(0,0,0,0.7);
+      display:none;
+      z-index:99999;
+    }
+    .popup-content {
+      background:#fff; 
+      color:#000; 
+      max-width:500px; 
+      margin:100px auto; 
+      padding:20px; 
+      position:relative;
+      text-align:center;
+      border-radius:4px;
+    }
+    .popup-content h4 {
+      margin-bottom:10px;
+    }
+    .popup-close {
+      position:absolute; 
+      top:10px; 
+      right:10px; 
+      cursor:pointer;
+      font-size:1.5em;
+      font-weight:bold;
+    }
   </style>
 </head>
 
@@ -218,6 +242,30 @@
       <a href="#contact">Contact</a>
     </div>
   </header>
+
+  <!-- TickerTape hneď pod menu -->
+  <div style="margin-top:70px; max-width:100%; text-align:center;">
+    <!-- TradingView TickerTape code -->
+    <div class="tradingview-widget-container" style="max-width:100%; margin:0 auto;">
+      <div class="tradingview-widget-container__widget"></div>
+      <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+      {
+        "symbols": [
+          { "proName": "FOREXCOM:SPXUSD", "title": "S&P 500 Index" },
+          { "proName": "FOREXCOM:NSXUSD", "title": "US 100 Cash CFD" },
+          { "proName": "FX_IDC:EURUSD",  "title": "EUR to USD" },
+          { "proName": "BITSTAMP:BTCUSD","title": "Bitcoin" },
+          { "proName": "BITSTAMP:ETHUSD","title": "Ethereum" }
+        ],
+        "showSymbolLogo": true,
+        "isTransparent": false,
+        "displayMode": "adaptive",
+        "colorTheme": "dark",
+        "locale": "en"
+      }
+      </script>
+    </div>
+  </div>
     
   <div class="intro white">
     <div class="container wow animated fadeInUp">
@@ -232,14 +280,9 @@
     </div>
   </div>
 
-  <!-- TickerTape widget (2nd) hneď pred prvým bannerom -->
-  <div class="tradingview-widget-container" style="max-width:100%; margin:10px auto; text-align:center;">
-    <div class="tradingview-widget-container__widget"></div>
-  </div>
-
   <!-- FIRST BANNER Placeholder -->
   <div style="text-align:center; margin: 20px 0;">
-    <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #0 (e.g. 728x90) - "Before first banner"</p>
+    <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #0 (e.g. 728x90) - "Before Symbol Overview"</p>
   </div>
 
   <!-- Symbol Overview Widget -->
@@ -247,11 +290,10 @@
     <div class="tradingview-widget-container__widget" style="min-height:350px;"></div>
   </div>
 
-  <!-- Side Banner Placeholder #1 (160x600) -->
+  <!-- AD Placeholder (Sidebar) -->
   <div style="position:absolute; right:0; top:300px; width:160px; z-index:999;">
-    <!-- Replace with AdSense Code -->
     <p style="border:2px dashed #ccc; padding:10px; background:#fff;">
-      Sidebar Ad Placeholder #1<br>(160x600)
+      Sidebar Ad Placeholder<br>(160x600)
     </p>
   </div>
 
@@ -367,6 +409,7 @@
     </div>
   </div>
 
+  <!-- Our Experts, Our Info, ... (rest of sections remain the same) -->
   <div class="section" id="members">
     <div class="container">
       <h2>Our Experts</h2>
@@ -455,10 +498,10 @@
                   "symbols": [
                     { "name": "FOREXCOM:SPXUSD", "displayName": "S&P 500 Index" },
                     { "name": "FOREXCOM:NSXUSD", "displayName": "US 100 Cash CFD" },
-                    { "name": "FOREXCOM:DJI", "displayName": "Dow Jones Industrial Average Index" },
-                    { "name": "INDEX:NKY", "displayName": "Japan 225" },
-                    { "name": "INDEX:DEU40", "displayName": "DAX Index" },
-                    { "name": "FOREXCOM:UKXGBP", "displayName": "FTSE 100 Index" }
+                    { "name": "FOREXCOM:DJI",     "displayName": "Dow Jones Industrial Average Index" },
+                    { "name": "INDEX:NKY",     "displayName": "Japan 225" },
+                    { "name": "INDEX:DEU40",   "displayName": "DAX Index" },
+                    { "name": "FOREXCOM:UKXGBP","displayName": "FTSE 100 Index" }
                   ]
                 },
                 {
@@ -466,22 +509,22 @@
                   "originalName": "Futures",
                   "symbols": [
                     { "name": "CME_MINI:ES1!", "displayName": "S&P 500" },
-                    { "name": "CME:6E1!", "displayName": "Euro" },
-                    { "name": "COMEX:GC1!", "displayName": "Gold" },
-                    { "name": "NYMEX:CL1!", "displayName": "WTI Crude Oil" },
-                    { "name": "NYMEX:NG1!", "displayName": "Gas" },
-                    { "name": "CBOT:ZC1!", "displayName": "Corn" }
+                    { "name": "CME:6E1!",     "displayName": "Euro" },
+                    { "name": "COMEX:GC1!",   "displayName": "Gold" },
+                    { "name": "NYMEX:CL1!",   "displayName": "WTI Crude Oil" },
+                    { "name": "NYMEX:NG1!",   "displayName": "Gas" },
+                    { "name": "CBOT:ZC1!",    "displayName": "Corn" }
                   ]
                 },
                 {
                   "name": "Bonds",
                   "originalName": "Bonds",
                   "symbols": [
-                    { "name": "CBOT:ZB1!", "displayName": "T-Bond" },
-                    { "name": "CBOT:UB1!", "displayName": "Ultra T-Bond" },
-                    { "name": "EUREX:FGBL1!", "displayName": "Euro Bund" },
-                    { "name": "EUREX:FBTP1!", "displayName": "Euro BTP" },
-                    { "name": "EUREX:FGBM1!", "displayName": "Euro BOBL" }
+                    { "name": "CBOT:ZB1!",  "displayName": "T-Bond" },
+                    { "name": "CBOT:UB1!",  "displayName": "Ultra T-Bond" },
+                    { "name": "EUREX:FGBL1!","displayName": "Euro Bund" },
+                    { "name": "EUREX:FBTP1!","displayName": "Euro BTP" },
+                    { "name": "EUREX:FGBM1!","displayName": "Euro BOBL" }
                   ]
                 },
                 {
@@ -530,11 +573,11 @@
   </div>
 
   <!-- Heatmap (Stock Heatmap) -->
-  <div class="section" style="background:#1F232A; padding:40px;">
+  <div class="heatmap-section">
     <div class="container">
       <h3 class="white text-center">TradingView Stock Heatmap</h3>
-      <div class="tradingview-widget-container" style="width:100%; height:500px;">
-        <div class="tradingview-widget-container__widget" style="min-height:500px;"></div>
+      <div class="tradingview-widget-container" style="width:100%; height:600px;">
+        <div class="tradingview-widget-container__widget" style="width:100%; height:100%;"></div>
         <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
         {
           "exchanges": [],
@@ -624,6 +667,16 @@
     </div>
   </footer>
 
+  <!-- Popup overlay for random ad -->
+  <div class="popup-overlay" id="randomPopup">
+    <div class="popup-content">
+      <span class="popup-close" id="popupClose">&times;</span>
+      <h4>Special Promo</h4>
+      <p>This is a random ad popup. Check out our latest offers!</p>
+      <button onclick="document.getElementById('randomPopup').style.display='none';">Close</button>
+    </div>
+  </div>
+
   <!-- JavaScript files -->
   <script src="js/jquery.min.js"></script>
   <script src="js/bootstrap.min.js"></script>
@@ -631,6 +684,7 @@
   <script src="js/classie.js"></script>
   <script>
     function init() {
+      // Shrink header on scroll
       window.addEventListener('scroll', function(e){
         var distanceY = window.pageYOffset || document.documentElement.scrollTop,
             shrinkOn = 300,
@@ -656,6 +710,17 @@
             panel.style.display = 'block';
           }
         });
+      });
+
+      // Random popup (3-10 seconds)
+      var randomDelay = Math.floor(Math.random() * 7000) + 3000; // between 3s and 10s
+      setTimeout(function(){
+        document.getElementById('randomPopup').style.display = 'block';
+      }, randomDelay);
+
+      // Close popup
+      document.getElementById('popupClose').addEventListener('click', function(){
+        document.getElementById('randomPopup').style.display = 'none';
       });
     }
     window.onload = init();
