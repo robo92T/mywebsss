@@ -7,20 +7,20 @@
 <!--<![endif]-->
 
 <head>
-  <title>ForexRabate.com – Best Forex Rebates, TradingView Calendar & Dukascopy News</title>
+  <title>ForexRabate.com – Best Forex Rebates, TradingView Calendars & Dukascopy News</title>
   
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   
   <!-- Enhanced SEO Meta Tags -->
-  <meta name="description" content="ForexRabate.com helps you find top Forex rebate programs, track live events with TradingView, and stay informed with Dukascopy news. Maximize your profits using advanced strategies, real-time data, and professional guidance.">
-  <meta name="keywords" content="forex, forex rebate, broker rebates, trading strategies, tradingview calendar, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading">
+  <meta name="description" content="ForexRabate.com helps you find top Forex rebate programs, track live events with TradingView, and stay informed with Dukascopy news. Maximize your profits using advanced strategies, real-time data, and professional guidance. We feature brokers like IC Markets, XM, Exness, HotForex, and FBS.">
+  <meta name="keywords" content="forex, forex rebate, broker rebates, IC Markets, XM, Exness, HotForex, FBS, trading strategies, tradingview calendar, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading">
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
   <meta property="og:title" content="ForexRabate.com – Best Forex Rebates & Live Market Events" />
-  <meta property="og:description" content="Discover top Forex rebate brokers, stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
+  <meta property="og:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS), stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
   <meta property="og:image" content="images/logo.png" />
   <meta property="og:url" content="https://forexrabate.com" />
   <meta property="og:type" content="website" />
@@ -28,7 +28,7 @@
   <!-- Twitter Cards -->
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="ForexRabate.com – Best Forex Rebates & Live Market Events">
-  <meta name="twitter:description" content="Discover top Forex rebate brokers, stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
+  <meta name="twitter:description" content="Discover top Forex rebate brokers (IC Markets, XM, Exness, HotForex, FBS), stay updated via TradingView events, and read financial news with Dukascopy. Boost your FX trading potential!">
   <meta name="twitter:image" content="images/logo.png">
 
   <!-- Structured Data (JSON-LD) for Organization & WebSite -->
@@ -61,6 +61,39 @@
       "query-input": "required name=search_term_string"
     }
   }
+  </script>
+
+  <!-- TickerTape WIDGET CODE (placed in head so it loads early) -->
+  <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+  {
+  "symbols": [
+    {
+      "proName": "FOREXCOM:SPXUSD",
+      "title": "S&P 500 Index"
+    },
+    {
+      "proName": "FOREXCOM:NSXUSD",
+      "title": "US 100 Cash CFD"
+    },
+    {
+      "proName": "FX_IDC:EURUSD",
+      "title": "EUR to USD"
+    },
+    {
+      "proName": "BITSTAMP:BTCUSD",
+      "title": "Bitcoin"
+    },
+    {
+      "proName": "BITSTAMP:ETHUSD",
+      "title": "Ethereum"
+    }
+  ],
+  "showSymbolLogo": true,
+  "isTransparent": false,
+  "displayMode": "adaptive",
+  "colorTheme": "dark",
+  "locale": "en"
+}
   </script>
 
   <!-- Fonts & CSS -->
@@ -98,6 +131,12 @@
     </div>
   </div>
 
+  <!-- TradingView TickerTape (Loaded from HEAD script) -->
+  <div class="tradingview-widget-container" style="max-width:100%; margin:10px auto; text-align:center;">
+    <!-- The widget container from the HEAD script will render here -->
+    <div class="tradingview-widget-container__widget"></div>
+  </div>
+
   <!-- Side Banner Placeholder #1 (e.g., 160x600) -->
   <div style="position:absolute; right:0; top:200px; width:160px; z-index:999;">
     <!-- Replace with AdSense Code -->
@@ -105,6 +144,71 @@
       Sidebar Ad Placeholder #1<br>(160x600)
     </p>
   </div>
+
+  <!-- NEW SECTION: 5 Brokers with logos -->
+  <div class="section" id="best-brokers" style="padding: 50px 0;">
+    <div class="container">
+      <h2>Top 5 Forex Brokers for Rebates</h2>
+      <hr />
+      <div class="row">
+        <!-- Broker 1: IC Markets -->
+        <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
+          <img src="images/brokers/icmarkets.png" alt="IC Markets Logo" class="img-responsive center-block" style="max-height:80px;">
+          <h4>IC Markets</h4>
+          <p style="min-height:80px;">
+            Tight ECN spreads from 0.0 pips, fast execution, and top-tier regulation.
+          </p>
+          <p>
+            <a href="https://www.icmarkets.com" target="_blank" rel="noopener">Visit IC Markets</a>
+          </p>
+        </div>
+        <!-- Broker 2: XM -->
+        <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
+          <img src="images/brokers/xm.png" alt="XM Logo" class="img-responsive center-block" style="max-height:80px;">
+          <h4>XM</h4>
+          <p style="min-height:80px;">
+            Wide range of account types, low spreads, and user-friendly platforms.
+          </p>
+          <p>
+            <a href="https://www.xm.com" target="_blank" rel="noopener">Visit XM</a>
+          </p>
+        </div>
+        <!-- Broker 3: Exness -->
+        <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
+          <img src="images/brokers/exness.png" alt="Exness Logo" class="img-responsive center-block" style="max-height:80px;">
+          <h4>Exness</h4>
+          <p style="min-height:80px;">
+            Flexible leverage up to 1:2000, instant withdrawals, and rebate-friendly options.
+          </p>
+          <p>
+            <a href="https://www.exness.com" target="_blank" rel="noopener">Visit Exness</a>
+          </p>
+        </div>
+        <!-- Broker 4: HotForex -->
+        <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
+          <img src="images/brokers/hotforex.png" alt="HotForex Logo" class="img-responsive center-block" style="max-height:80px;">
+          <h4>HotForex</h4>
+          <p style="min-height:80px;">
+            Cashback promotions, multiple licenses, and a variety of trading instruments.
+          </p>
+          <p>
+            <a href="https://www.hotforex.com" target="_blank" rel="noopener">Visit HotForex</a>
+          </p>
+        </div>
+        <!-- Broker 5: FBS -->
+        <div class="col-md-2 col-sm-4 col-xs-6 wow fadeInUp">
+          <img src="images/brokers/fbs.png" alt="FBS Logo" class="img-responsive center-block" style="max-height:80px;">
+          <h4>FBS</h4>
+          <p style="min-height:80px;">
+            Cent accounts for beginners, attractive bonuses, and global presence.
+          </p>
+          <p>
+            <a href="https://fbs.com" target="_blank" rel="noopener">Visit FBS</a>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div><!-- #best-brokers -->
 
   <div class="section" id="members">
     <div class="container">
@@ -172,6 +276,76 @@
   <!-- Banner Placeholder #2 -->
   <div style="text-align:center; margin: 20px 0;">
     <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #2 (728x90)</p>
+  </div>
+
+  <!-- TradingView MARKET QUOTES WIDGET -->
+  <div class="section" style="background:#131722; padding:20px 0;">
+    <div class="container">
+      <h3 class="white text-center">Market Quotes</h3>
+      <div class="tradingview-widget-container" style="margin:0 auto; max-width:550px;">
+        <div class="tradingview-widget-container__widget"></div>
+        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-market-quotes.js" async>
+        {
+          "width": 550,
+          "height": 550,
+          "symbolsGroups": [
+            {
+              "name": "Indices",
+              "originalName": "Indices",
+              "symbols": [
+                { "name": "FOREXCOM:SPXUSD", "displayName": "S&P 500 Index" },
+                { "name": "FOREXCOM:NSXUSD", "displayName": "US 100 Cash CFD" },
+                { "name": "FOREXCOM:DJI", "displayName": "Dow Jones Industrial Average Index" },
+                { "name": "INDEX:NKY", "displayName": "Japan 225" },
+                { "name": "INDEX:DEU40", "displayName": "DAX Index" },
+                { "name": "FOREXCOM:UKXGBP", "displayName": "FTSE 100 Index" }
+              ]
+            },
+            {
+              "name": "Futures",
+              "originalName": "Futures",
+              "symbols": [
+                { "name": "CME_MINI:ES1!", "displayName": "S&P 500" },
+                { "name": "CME:6E1!", "displayName": "Euro" },
+                { "name": "COMEX:GC1!", "displayName": "Gold" },
+                { "name": "NYMEX:CL1!", "displayName": "WTI Crude Oil" },
+                { "name": "NYMEX:NG1!", "displayName": "Gas" },
+                { "name": "CBOT:ZC1!", "displayName": "Corn" }
+              ]
+            },
+            {
+              "name": "Bonds",
+              "originalName": "Bonds",
+              "symbols": [
+                { "name": "CBOT:ZB1!", "displayName": "T-Bond" },
+                { "name": "CBOT:UB1!", "displayName": "Ultra T-Bond" },
+                { "name": "EUREX:FGBL1!", "displayName": "Euro Bund" },
+                { "name": "EUREX:FBTP1!", "displayName": "Euro BTP" },
+                { "name": "EUREX:FGBM1!", "displayName": "Euro BOBL" }
+              ]
+            },
+            {
+              "name": "Forex",
+              "originalName": "Forex",
+              "symbols": [
+                { "name": "FX:EURUSD", "displayName": "EUR to USD" },
+                { "name": "FX:GBPUSD", "displayName": "GBP to USD" },
+                { "name": "FX:USDJPY", "displayName": "USD to JPY" },
+                { "name": "FX:USDCHF", "displayName": "USD to CHF" },
+                { "name": "FX:AUDUSD", "displayName": "AUD to USD" },
+                { "name": "FX:USDCAD", "displayName": "USD to CAD" }
+              ]
+            }
+          ],
+          "showSymbolLogo": true,
+          "isTransparent": false,
+          "colorTheme": "dark",
+          "locale": "en",
+          "backgroundColor": "#131722"
+        }
+        </script>
+      </div>
+    </div>
   </div>
 
   <div class="section" id="our-service">
