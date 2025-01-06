@@ -515,34 +515,101 @@
     </div>
   </div>
 
-  <!-- Heatmap (Stock Heatmap) -->
-  <div class="heatmap-section">
-    <div class="container">
-      <h3 class="white text-center">TradingView Stock Heatmap</h3>
-      <div class="tradingview-widget-container" style="width:100%; height:100%;">
-        <div class="tradingview-widget-container__widget" style="width:100%; height:100%;"></div>
-        <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
-        {
-          "exchanges": [],
-          "dataSource": "SPX500",
-          "grouping": "sector",
-          "blockSize": "market_cap_basic",
-          "blockColor": "change",
-          "locale": "en",
-          "symbolUrl": "",
-          "colorTheme": "dark",
-          "hasTopBar": false,
-          "isDataSetEnabled": false,
-          "isZoomEnabled": true,
-          "hasSymbolTooltip": true,
-          "isMonoSize": false,
-          "width": "300%",
-          "height": "500px"
-        }
-        </script>
+  <!-- Heatmap + Text side by side on desktop, stacked on mobile -->
+<div class="section">
+  <div class="container">
+    <div class="row">
+      <!-- LEFT COLUMN: Heatmap -->
+      <div class="col-md-6 col-sm-12" style="margin-bottom: 30px;">
+        <div class="tradingview-widget-container" style="width:100%; height:100%;">
+          <div class="tradingview-widget-container__widget" style="width:100%; height:100%;"></div>
+          <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-stock-heatmap.js" async>
+          {
+            "exchanges": [],
+            "dataSource": "SPX500",
+            "grouping": "sector",
+            "blockSize": "market_cap_basic",
+            "blockColor": "change",
+            "locale": "en",
+            "symbolUrl": "",
+            "colorTheme": "dark",
+            "hasTopBar": false,
+            "isDataSetEnabled": false,
+            "isZoomEnabled": true,
+            "hasSymbolTooltip": true,
+            "isMonoSize": false,
+            "width": "100%",
+            "height": "500px"
+          }
+          </script>
+        </div>
       </div>
-    </div>
-  </div>
+      <!-- RIGHT COLUMN: 800-word explanation about heat maps -->
+      <div class="col-md-6 col-sm-12" style="color:#fff; background:#1F232A; padding:20px;">
+        <h3>What Is a <strong>Heat Map</strong> and Why Does It Matter?</h3>
+        <p>
+          A <strong>heat map</strong> is a powerful visualization tool used to depict and analyze <strong>market data</strong> based on color-coded intensity. 
+          In financial contexts, it typically consolidates numerous assets—such as stocks, currencies, or entire sectors—into a single, quickly comprehensible chart. 
+          Colors (usually from green to red) signal if the price is rising or falling, and the blocks’ sizes may represent factors like <strong>market capitalization</strong> or <strong>trading volume</strong>. 
+          This graphical summary helps investors or traders gauge the overall market’s mood at a glance, see which industries are flourishing, and identify lagging sectors that might hint at a reversal or a deeper trend. 
+          By grouping these instruments by industry, index, or risk type, the map allows for rapid cross-comparison, making it an excellent resource for anyone who wants to keep tabs on multiple markets simultaneously.
+        </p>
+        <p>
+          At first glance, a <strong>heat map</strong> looks like a patchwork quilt, each patch representing a distinct asset. 
+          The more advanced the map, the more filters it provides: you might sort by <strong>market performance</strong>, volume changes, or time intervals (daily, weekly, monthly). 
+          Even fundamental data (like earnings or P/E ratios) can sometimes be woven in, giving a bird's-eye view not just of price action but also of the underlying fundamentals. 
+          When used regularly, this tool can help reveal evolving <strong>market trends</strong> before they become obvious on individual charts. 
+          In essence, it’s a quick snapshot of which corners of the market are hot—or not.
+        </p>
+        <h4>The Role of <strong>Heat Maps</strong> in <strong>Technical Analysis</strong></h4>
+        <p>
+          While single-instrument charts are valuable, they can trap a trader into a myopic view of one ticker or sector. 
+          Enter the <strong>heat map</strong>, which combats tunnel vision by displaying a wide cross-section of the market in one place. 
+          If your <strong>technical analysis</strong> suggests a bullish pattern in a specific stock but the entire sector is trending downward on the heat map, you might question that individual setup’s viability or expect more volatility. 
+          Conversely, seeing that many assets within a sector are suddenly turning green can confirm a broad-based rally—this might encourage you to refine your <strong>trading strategy</strong> or shift capital accordingly.
+        </p>
+        <p>
+          The color shifts also help highlight pockets of liquidity and potential risk. 
+          A large swath of red across multiple high-cap stocks can signify systemic selling pressure and reduced appetite for riskier plays. 
+          On the other hand, a wave of green across small-cap or growth stocks can reveal an increased appetite for speculation. 
+          This sort of broad overview can inform your <strong>investment decisions</strong>, whether you’re a swing trader timing short-term moves or a longer-term investor focusing on <strong>portfolio</strong> allocation.
+        </p>
+        <h4>Identifying <strong>Market Trends</strong> at a Glance</h4>
+        <p>
+          One of the biggest challenges in finance is cutting through the noise. 
+          News headlines, investor sentiment, and <strong>macroeconomic factors</strong> can complicate daily trading decisions. 
+          A well-configured <strong>heat map</strong> sidesteps this clutter by visually condensing data into color-coded blocks, allowing patterns to jump out. 
+          If a major commodity like oil has turned green after weeks of red, it’s a possible signal that its <strong>price movements</strong> are reversing. 
+          Similarly, if an entire sector like tech is aggressively red day after day, you might suspect either overvaluation, negative earnings sentiment, or broad-based risk aversion. 
+          Spotting these correlations can help you manage or rebalance your <strong>portfolio</strong> quickly.
+        </p>
+        <h4>Using <strong>Heat Maps</strong> for <strong>Risk Management</strong></h4>
+        <p>
+          Beyond the identification of new opportunities, <strong>heat maps</strong> can also serve as an early-warning system for <strong>risk management</strong>. 
+          When a sector in which you have heavy exposure begins to turn red on the heat map, it’s a prompt to re-evaluate your <strong>asset allocation</strong>. 
+          Are your positions too concentrated? Should you tighten stop-loss levels or trim existing holdings? 
+          If the heat map shows a global sell-off, you might even choose to hedge with inverse ETFs or options. 
+          This immediate visual feedback can save traders from ignoring a creeping systemic shift in sentiment, where an entire corner of the market is in trouble.
+        </p>
+        <h4>Customizing a <strong>Heat Map</strong> to Suit Your Strategy</h4>
+        <p>
+          Modern trading platforms and financial websites frequently let you tailor the <strong>heat map</strong> to specific criteria: 
+          maybe you only want to track large-cap growth stocks, or you focus on high-volume pairs in <strong>forex</strong>. 
+          By filtering out irrelevant data, your screen becomes a curated dashboard that precisely reflects your personal <strong>investment interests</strong>. 
+          You can also adjust color gradients to emphasize certain thresholds or switch time frames from intraday to monthly for a bigger perspective. 
+          This adaptability makes heat maps a universal tool—whether you’re a day trader chasing momentum or a fundamental investor checking if sectors align with your macro thesis.
+        </p>
+        <p>
+          In conclusion, a <strong>heat map</strong> is more than just a colorful gimmick; it’s a robust aggregator of <strong>market data</strong> that helps reveal which parts of the market are thriving or languishing. 
+          By illustrating performance, liquidity, and sentiment at a glance, it pairs well with other charts and indicators—helping traders of all stripes fine-tune their decisions, gauge broader conditions, and spot trends early. 
+          On mobile devices, this data compresses nicely so you can scan for potential trades even on the go. 
+          Ultimately, the more you incorporate <strong>heat maps</strong> into your workflow, the sharper your ability to sift signal from noise and steer your <strong>trading strategy</strong> with confidence.
+        </p>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+</div><!-- /.section -->
+
 
   <!-- Dukascopy News Widget -->
   <div class="container" style="margin-top:30px; margin-bottom:30px;">
