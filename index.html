@@ -151,63 +151,123 @@
       color: #fff;
     }
 
-    /* Zrušili sme predchádzajúci random popup, pridáme 2 nové popupy (risk + cookies) */
-    .popup-overlay {
-      position: fixed;
-      top:0; left:0; 
-      width:100%; height:100%;
-      background: rgba(0,0,0,0.7);
-      display:none;
-      z-index:99999;
-    }
-    .popup-content {
-      background:#fff; 
-      color:#000; 
-      max-width:600px; 
-      margin:100px auto; 
-      padding:20px; 
-      position:relative;
-      text-align:left;
-      border-radius:4px;
-    }
-    .popup-close {
-      position:absolute; 
-      top:10px; 
-      right:10px; 
-      cursor:pointer;
-      font-size:1.5em;
-      font-weight:bold;
-    }
-    .popup-content h4 {
-      margin-top:0;
-    }
+    /* VŠETKY popupy budú mať rovnaký základny "overlay" štýl, ale rušíme polopriehľadné pozadie */
+.popup-overlay {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  display: none; /* Na začiatku skryté, zobrazia sa cez JS. */
+  z-index: 99999; /* Aby boli navrchu */
+  box-sizing: border-box;
+}
+
+/* Každý popup bude mať iné 'bottom', aby sa neprekrývali */
+#cookiePopup {
+  bottom: 0; /* Úplne dole */
+}
+
+#riskPopup {
+  bottom: 60px; /* Odsunieme ho o 60px, aby bol NAD cookie popupom */
+}
+
+/* Obsah popupu -> úzky pruh, plná šírka, malé paddingy */
+.popup-content {
+  width: 100%;
+  background: #333;        /* Tmavé pozadie */
+  color: #fff;            /* Biele písmo */
+  padding: 15px 50px 15px 15px; /* Horný, pravý, dolný, ľavý padding */
+  position: relative;     /* pre absolútne umiestnenie ikony X */
+  text-align: left;       /* Môžete dať center, ak chcete text vycentrovať */
+  font-size: 14px;
+  min-height: 60px;       /* Aby to bol trošku hrubší pás */
+  box-sizing: border-box;
+}
+
+/* Krížik (zatváracie tlačidlo) */
+.popup-close {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  cursor: pointer;
+  font-size: 1.5em;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1;
+}
+
+/* Malé úpravy pre h4, p, button vo vnútri */
+.popup-content h4 {
+  margin: 0 0 5px 0;
+  font-size: 16px;
+}
+.popup-content p {
+  margin: 0 0 5px 0;
+  line-height: 1.4;
+}
+.popup-content button {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  margin-top: 5px;
+  font-size: 14px;
+}
+.popup-content button:hover {
+  background: #777;
+}
   </style>
+ <script>
+    window.onload = function() {
+      // Po načítaní stránky zobrazíme oba pásy
+      document.getElementById('riskPopup').style.display = 'block';
+      document.getElementById('cookiePopup').style.display = 'block';
+
+      // Zatváranie krížikom
+      document.getElementById('riskPopupClose').onclick = function(){
+        document.getElementById('riskPopup').style.display = 'none';
+      };
+      document.getElementById('cookiePopupClose').onclick = function(){
+        document.getElementById('cookiePopup').style.display = 'none';
+      };
+    };
+  </script>
+  
 </head>
 
 <body>
-  <!-- POPUP #1: RIZIKÁ INVESTOVANIA do CFD -->
-  <div class="popup-overlay" id="riskPopup">
-    <div class="popup-content">
-      <span class="popup-close" id="riskPopupClose">&times;</span>
-      <h4>Risk Disclaimer (CFD/Forex)</h4>
-      <p>
-        Trading Forex, CFDs, and other financial instruments carries a high level of risk and may not be suitable for all investors. Leverage creates additional risk and loss exposure. Before you decide to trade, consider your investment objectives, experience level, and risk tolerance.
-      </p>
-      <button onclick="document.getElementById('riskPopup').style.display='none';">I Understand</button>
-    </div>
+<!-- POPUP #1: RIZIKÁ INVESTOVANIA do CFD -->
+<div class="popup-overlay" id="riskPopup">
+  <div class="popup-content">
+    <span class="popup-close" id="riskPopupClose">&times;</span>
+    <h4>Risk Disclaimer (CFD/Forex)</h4>
+    <p>
+      Trading Forex, CFDs, and other financial instruments carries a high level of risk 
+      and may not be suitable for all investors. Leverage creates additional risk and 
+      loss exposure. Before you decide to trade, consider your investment objectives, 
+      experience level, and risk tolerance.
+    </p>
+    <button onclick="document.getElementById('riskPopup').style.display='none';">
+      I Understand
+    </button>
   </div>
+</div>
 
-  <!-- POPUP #2: COOKIE POLICY -->
-  <div class="popup-overlay" id="cookiePopup">
-    <div class="popup-content">
-      <span class="popup-close" id="cookiePopupClose">&times;</span>
-      <h4>Cookie Policy</h4>
-      <p>
-        This site uses cookies to provide and improve services. By using this website, you agree to our use of cookies. For more details, see our Privacy and Cookie Policy.
-      </p>
-      <button onclick="document.getElementById('cookiePopup').style.display='none';">Accept</button>
-    </div>
+<!-- POPUP #2: COOKIE POLICY -->
+<div class="popup-overlay" id="cookiePopup">
+  <div class="popup-content">
+    <span class="popup-close" id="cookiePopupClose">&times;</span>
+    <h4>Cookie Policy</h4>
+    <p>
+      This site uses cookies to provide and improve services. By using this website, 
+      you agree to our use of cookies. For more details, see our Privacy and Cookie Policy.
+    </p>
+    <button onclick="document.getElementById('cookiePopup').style.display='none';">
+      Accept
+    </button>
   </div>
+</div>
+
 
   <header id="header" class="navbar-fixed-top">
     <a class="brand" href="index.html">
