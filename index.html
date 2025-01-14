@@ -151,73 +151,136 @@
       color: #fff;
     }
 
-    /* VŠETKY popupy budú mať rovnaký základny "overlay" štýl, ale rušíme polopriehľadné pozadie */
-.popup-overlay {
-  position: fixed;
-  left: 0;
-  width: 100%;
-  display: none; /* Na začiatku skryté, zobrazia sa cez JS. */
-  z-index: 99999; /* Aby boli navrchu */
-  box-sizing: border-box;
-}
+   <!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Popups with Dimmed Background</title>
+  <style>
+    /*************************************************
+     * ZÁKLAD: Overlay cez celú obrazovku + zatemnenie
+     *************************************************/
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;           /* prekryje celú výšku */
+      background: rgba(0,0,0,0.5); /* stmavenie */
+      display: none;          /* skryté, kým to nezobrazíme cez JS */
+      z-index: 99999;
+      box-sizing: border-box;
+    }
 
-/* Každý popup bude mať iné 'bottom', aby sa neprekrývali */
-#cookiePopup {
-  bottom: 0; /* Úplne dole */
-}
+    /*************************************************
+     * RISK POPUP: posunieme jeho obsah o 60px nadol,
+     * aby bol nad Cookie barom
+     *************************************************/
+    #riskPopup .popup-content {
+      position: absolute; 
+      left: 0; 
+      bottom: 60px;  /* 60px nad spodným okrajom => nad Cookie barom */
+      width: 100%;
+      background: #BFA55E; /* zlatistá farba ako predtým */
+      color: #fff;
+      padding: 15px 50px 15px 15px;
+      font-size: 14px;
+      min-height: 60px;
+      box-sizing: border-box;
+      border: 2px solid #444;  /* tmavosivý okraj */
+    }
 
-#riskPopup {
-  bottom: 60px; /* Odsunieme ho o 60px, aby bol NAD cookie popupom */
-}
+    /*************************************************
+     * COOKIE POPUP: je úplne dole (bottom: 0)
+     *************************************************/
+    #cookiePopup .popup-content {
+      position: absolute;
+      left: 0; 
+      bottom: 0;  /* úplne dole */
+      width: 100%;
+      background: #BFA55E; 
+      color: #fff;
+      padding: 15px 50px 15px 15px;
+      font-size: 14px;
+      min-height: 60px;
+      box-sizing: border-box;
+      border: 2px solid #444; /* tmavosivý okraj */
+    }
 
-/* Obsah popupu -> úzky pruh, plná šírka, malé paddingy */
-.popup-content {
-  width: 100%;
-  background:#BFA55E;        /* Tmavé pozadie */
-  color: #fff;            /* Biele písmo */
-  padding: 15px 50px 15px 15px; /* Horný, pravý, dolný, ľavý padding */
-  position: relative;     /* pre absolútne umiestnenie ikony X */
-  text-align: left;       /* Môžete dať center, ak chcete text vycentrovať */
-  font-size: 14px;
-  min-height: 60px;       /* Aby to bol trošku hrubší pás */
-  box-sizing: border-box;
-}
+    /* Krížik (zatváracie tlačidlo) */
+    .popup-close {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      font-size: 1.5em;
+      font-weight: bold;
+      color: #fff;
+      line-height: 1;
+    }
 
-/* Krížik (zatváracie tlačidlo) */
-.popup-close {
-  position: absolute;
-  right: 10px;
-  top: 10px;
-  cursor: pointer;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #fff;
-  line-height: 1;
-}
-
-/* Malé úpravy pre h4, p, button vo vnútri */
-.popup-content h4 {
-  margin: 0 0 5px 0;
-  font-size: 16px;
-}
-.popup-content p {
-  margin: 0 0 5px 0;
-  line-height: 1.4;
-}
-.popup-content button {
-  background: #555;
-  color: #fff;
-  border: none;
-  padding: 8px 16px;
-  cursor: pointer;
-  margin-top: 5px;
-  font-size: 14px;
-}
-.popup-content button:hover {
-  background: #777;
-}
+    /* Nadpisy, odstavce, tlačidlá vnútri popupu */
+    .popup-content h4 {
+      margin: 0 0 5px 0;
+      font-size: 16px;
+    }
+    .popup-content p {
+      margin: 0 0 5px 0;
+      line-height: 1.4;
+    }
+    .popup-content button {
+      background: #555;
+      color: #fff;
+      border: none;
+      padding: 8px 16px;
+      cursor: pointer;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .popup-content button:hover {
+      background: #777;
+    }
   </style>
- <script>
+</head>
+<body style="margin:0; padding:0;">
+
+  <!-- PRÍKLAD OBSAHU STRÁNKY -->
+  <h1>Moja stránka</h1>
+  <p>Tu je zvyšok vášho obsahu.</p>
+
+  <!-- POPUP #1: RIZIKÁ INVESTOVANIA do CFD -->
+  <div class="popup-overlay" id="riskPopup">
+    <div class="popup-content">
+      <span class="popup-close" id="riskPopupClose">&times;</span>
+      <h4>Risk Disclaimer (CFD/Forex)</h4>
+      <p>
+        Trading Forex, CFDs, and other financial instruments carries a high level of risk 
+        and may not be suitable for all investors. Leverage creates additional risk and 
+        loss exposure. Before you decide to trade, consider your investment objectives, 
+        experience level, and risk tolerance.
+      </p>
+      <button onclick="document.getElementById('riskPopup').style.display='none';">
+        I Understand
+      </button>
+    </div>
+  </div>
+
+  <!-- POPUP #2: COOKIE POLICY -->
+  <div class="popup-overlay" id="cookiePopup">
+    <div class="popup-content">
+      <span class="popup-close" id="cookiePopupClose">&times;</span>
+      <h4>Cookie Policy</h4>
+      <p>
+        This site uses cookies to provide and improve services. By using this website, 
+        you agree to our use of cookies. For more details, see our Privacy and Cookie Policy.
+      </p>
+      <button onclick="document.getElementById('cookiePopup').style.display='none';">
+        Accept
+      </button>
+    </div>
+  </div>
+
+  <script>
     window.onload = function() {
       // Po načítaní stránky zobrazíme oba pásy
       document.getElementById('riskPopup').style.display = 'block';
@@ -232,6 +295,9 @@
       };
     };
   </script>
+</body>
+</html>
+
   
 </head>
 
