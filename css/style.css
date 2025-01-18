@@ -1537,3 +1537,22 @@ h2 {
         margin-top: 15px;
     }
 }
+
+.disclaimer-box {
+  /* Maximálna šírka boxu, aby sa text neroztiahol po celej stránke */
+  max-width: 700px;
+  margin: 0 auto;
+  
+  /* Mierne tmavé, priehľadné pozadie */
+  background: rgba(0, 0, 0, 0.6); 
+  /* Biela farba písma */
+  color: #fff;     
+  
+  /* Vnútorné odsadenie (padding) pre príjemný vzhľad textu */
+  padding: 20px;   
+  
+  /* Jemný okraj (rámik) a zaoblené rohy */
+  border: 1px solid #444;  
+  border-radius: 4px;
+}
+
