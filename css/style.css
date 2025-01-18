@@ -1027,12 +1027,14 @@ section:last-child {
     line-height: 2;
 }
 .lead-creative {
-    font-family: "Novecento Sans Wide Medium";
-    font-size: 28px;
-    text-align: center;
-    word-spacing: 4px;
-    letter-spacing: 1.2px;
-    line-height: 50px;
+  font-family: "Merriweather", Georgia, serif !important; /* menšie písmo */
+  font-size: 18px !important;        /* znížte písmo z 28px -> 18px (príklad) */
+  line-height: 1.6 !important;       /* príjemnejšia riadková výška */
+  letter-spacing: normal !important; /* zrušte roztiahnuté písmená */
+  text-transform: none !important;   /* aby nebolo uppercase */
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+  text-align: left !important;       /* zarovnanie textu naľavo */
 }
 .lead-creative-banner {
     font-family: "Merriweather";
@@ -1123,10 +1125,10 @@ form .flexible:nth-child(3) {
     margin-bottom: 0;
 }
 .intro {
-    padding: 162px 0 64px 0;
-    text-align: center;
-    background: url('../images/texturebg.jpg') repeat scroll 0% 0% transparent;
-    background-size: cover;
+  padding: 60px 0 30px 0 !important; /* menší padding hore/dole */
+  text-align: left !important;       /* text bude naľavo */
+  background: url('../images/texturebg.jpg') repeat scroll 0% 0% transparent;
+  background-size: cover;
 }
 .intro .container {
     max-width: 950px;
