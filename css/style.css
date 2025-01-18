@@ -1127,7 +1127,7 @@ form .flexible:nth-child(3) {
 .intro {
   padding: 60px 0 30px 0 !important; /* menší padding hore/dole */
   text-align: left !important;       /* text bude naľavo */
-  background: url('../images/obrazok web.png') repeat scroll 0% 15% transparent;
+  background: url('../images/obrazokweb.png') repeat scroll 0% 0% transparent;
   background-size: cover;
 }
 .intro .container {
