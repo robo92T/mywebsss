@@ -555,19 +555,36 @@
     </div>
     <div class="row" style="margin-top: 30px;">
       <div class="col-12">
-        <div style="border: 5px solid #FFD700; border-radius: 15px; padding: 20px; background: linear-gradient(145deg, #222, #1A1A1A); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); height: 90vh; overflow: hidden;">
+        <div 
+          style="border: 5px solid #FFD700; border-radius: 15px; padding: 20px; background: linear-gradient(145deg, #222, #1A1A1A); box-shadow: 0 10px 20px rgba(0, 0, 0, 0.8); height: 90vh; overflow: hidden;">
           <iframe 
-            width="900" 
-            height="1600" 
             src="https://rss.app/embed/v1/imageboard/tAe7jIyEeGB03zNA" 
             frameborder="0" 
-            style="border: none; border-radius: 10px; width: 100%; height: 100%; overflow: hidden;">
+            class="responsive-iframe">
           </iframe>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style>
+  /* Základný štýl pre iframe */
+  .responsive-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    overflow: hidden; /* Skryje posúvanie */
+  }
+
+  /* Na menších obrazovkách povoliť skrolovanie */
+  @media screen and (max-width: 768px) {
+    .responsive-iframe {
+      overflow: auto; /* Povoliť posúvanie na mobilných zariadeniach */
+    }
+  }
+</style>
+
 
   
 <!-- Grey background for "Forex Keywords" -->
