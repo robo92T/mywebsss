@@ -829,12 +829,12 @@
 
 
 
-<!-- Market Quotes + Event Calendar -->
+<!-- Market Quotes + Economic Calendar -->
 <div class="section" style="background:#131722; padding:20px 0;">
   <div class="container">
     <div class="row">
       <!-- Left: Market Quotes -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-12">
         <h3 class="white text-center">Market Quotes</h3>
         <div class="tradingview-widget-container" style="margin:0 auto; max-width:550px;">
           <div class="tradingview-widget-container__widget"></div>
@@ -902,7 +902,7 @@
       </div>
 
       <!-- Right: Event Calendar -->
-      <div class="col-md-6">
+      <div class="col-md-6 col-sm-12">
         <h3 class="white text-center">Events Calendar</h3>
         <div class="tradingview-widget-container" style="margin:0 auto; max-width:500px;">
           <div class="tradingview-widget-container__widget"></div>
@@ -920,8 +920,91 @@
         </div>
       </div>
     </div>
+
+    <!-- Informative Text Section -->
+    <div class="row" style="margin-top:40px;">
+      <div class="col-12">
+        <div style="color:white; padding:20px; background-color:#1F232A; border-radius:8px;">
+          <h4 style="color:#FFD700;">How to Use Market Quotes and Economic Calendars Effectively</h4>
+          <p>Market Quotes and Economic Calendars are essential tools for any trader aiming to stay ahead in the dynamic world of financial markets. Here are some tips and tricks to help you maximize their potential:</p>
+          
+          <ul>
+            <li><strong>Market Trends:</strong> Keep an eye on <span class="hover-highlight" data-tooltip="A sustained directional movement in prices, often identified through technical indicators like moving averages.">trending assets</span>. Spot indices like the S&P 500 or DAX Index for signs of overall market sentiment.</li>
+            <li><strong>Volatility Signals:</strong> Reductions in price movement may indicate consolidation, while sharp increases often precede breakouts.</li>
+            <li><strong>Economic Events:</strong> Pay attention to high-impact events like central bank meetings or GDP releases. These can cause sudden market swings.</li>
+          </ul>
+
+          <h5 style="color:#FFD700;">Practical Examples</h5>
+          <p>Imagine a trader sees the Dow Jones Index rising consistently. Simultaneously, the Economic Calendar shows an upcoming Federal Reserve interest rate announcement. This alignment could hint at a potential market continuation—assuming the rate decision meets expectations.</p>
+          
+          <p style="color:#888;">Another example: Spotting a significant GDP decline in Japan on the calendar might lead traders to short the <span class="hover-highlight" data-tooltip="The financial index representing Japan’s equity markets.">Japan 225</span>, anticipating further bearish sentiment.</p>
+
+          <h5 style="color:#FFD700;">Tips for Beginners</h5>
+          <ul>
+            <li><strong>Start Small:</strong> Focus on one or two major indices or currency pairs to understand their behavior during specific economic events.</li>
+            <li><strong>Use Stop-Loss Orders:</strong> Protect your investments from unexpected volatility by setting appropriate stop-loss levels.</li>
+            <li><strong>Leverage Wisely:</strong> While leverage amplifies gains, it also increases risks. Avoid excessive leverage, especially during news-heavy periods.</li>
+          </ul>
+
+          <h5 style="color:#FFD700;">Advanced Insights</h5>
+          <p>Professional traders often use a combination of Market Quotes and Economic Calendars with technical indicators like RSI or Bollinger Bands. For example, if a key calendar event aligns with a technical signal (e.g., overbought conditions), it can validate a trade setup.</p>
+          
+          <p style="color:#888;">Leverage features like <strong>filtering options</strong> on your Economic Calendar to focus only on events relevant to your chosen assets. This minimizes noise and lets you act swiftly during high-impact announcements.</p>
+
+          <p>By staying informed and pairing these tools with disciplined risk management, you can navigate market uncertainties with greater confidence and precision.</p>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
+
+<style>
+  .hover-highlight {
+    position: relative;
+    color: red;
+    font-weight: bold;
+    cursor: pointer;
+  }
+
+  .hover-highlight[data-tooltip]:hover::after {
+    content: attr(data-tooltip);
+    position: absolute;
+    bottom: 125%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 8px;
+    border-radius: 5px;
+    white-space: nowrap;
+    z-index: 10;
+    font-size: 12px;
+    animation: fadeIn 0.3s ease;
+  }
+
+  .hover-highlight[data-tooltip]:hover::before {
+    content: '';
+    position: absolute;
+    bottom: 115%;
+    left: 50%;
+    transform: translateX(-50%);
+    border-width: 6px;
+    border-style: solid;
+    border-color: rgba(0, 0, 0, 0.8) transparent transparent transparent;
+    z-index: 10;
+    animation: fadeIn 0.3s ease;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+</style>
+
 
 <!-- Heatmap + short explanation -->
 <div class="section">
