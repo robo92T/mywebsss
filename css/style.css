@@ -1540,7 +1540,7 @@ h2 {
 
 .disclaimer-box {
   /* Maximálna šírka boxu, aby sa text neroztiahol po celej stránke */
-  max-width: 300px;
+  max-width: 800px;
   margin: 0 auto;
   
   /* Mierne tmavé, priehľadné pozadie */
