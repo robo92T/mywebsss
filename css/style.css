@@ -1544,12 +1544,12 @@ h2 {
   margin: 0 auto;
   
   /* Mierne tmavé, priehľadné pozadie */
-  background: rgba(0, 0, 0, 0.3); 
+  background: rgba(0, 0, 0, 0.5); 
   /* Biela farba písma */
   color: #fff;     
   
   /* Vnútorné odsadenie (padding) pre príjemný vzhľad textu */
-  padding: 5px;   
+  padding: 10px;   
   
   /* Jemný okraj (rámik) a zaoblené rohy */
   border: 1px solid #444;  
