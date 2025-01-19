@@ -330,9 +330,8 @@
     </div>
   </div>
     
- <!-- Začiatok sekcie INTRO s disclaimrom a widgetom -->
+<!-- Začiatok sekcie INTRO s disclaimrom a widgetom -->
 <div class="intro white" id="intro-section" style="position: relative; background: url('images/obrazokweb2.png') no-repeat center center; padding: 60px 0; background-size: cover; transition: all 1s ease;">
-  <div class="background-overlay" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; transition: all 1s ease;"></div>
   <div class="container" style="position: relative; z-index: 2;">    
     <div class="row">
       <!-- Ľavý stĺpec (Disclaimers, text) -->
@@ -379,14 +378,15 @@
 </div><!-- .intro -->
 
 <script>
-  // Po 4 sekundách pridáme efekt blur a tieň iba na pozadie
+  // Po 4 sekundách pridáme efekt blur a tieň iba na pozadie sekcie
   setTimeout(() => {
-    const backgroundOverlay = document.querySelector('.background-overlay');
-    backgroundOverlay.style.filter = 'blur(5px)';
-    backgroundOverlay.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+    const introSection = document.getElementById('intro-section');
+    introSection.style.filter = 'blur(5px)';
+    introSection.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
   }, 4000);
 </script>
 <!-- Koniec sekcie INTRO s disclaimrom a widgetom -->
+
 
   <!-- FIRST BANNER Placeholder -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8795894489528494"
