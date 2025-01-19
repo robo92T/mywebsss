@@ -24,7 +24,7 @@
   <!-- Enhanced SEO Meta Tags -->
   <meta name="description" content="ForexRabate.com helps you find top Forex rebate programs, track markets via TradingView (TickerTape, advanced charts, heatmap), and stay informed with Dukascopy news. We feature brokers like IC Markets, XM, Exness, HotForex, and FBS. Maximize your Forex profits.Explore candlestick chart patterns (hammer, doji, engulfing) and learn OHLC fundamentals for better trading decisions.">
   <meta name="description" content="Learn about effective Forex strategies like Trend Following, Scalping, Breakout Trading, and Range Trading. Optimize your trading approach with detailed tips and tools.">
-  <meta name="keywords" content="forex, forex rebate, broker rebates, IC Markets, XM, Exness, HotForex, FBS, candlestick charts, open-high-low-close (OHLC), bullish engulfing, bearish engulfing, hammer candlestick, shooting star candlestick, doji, chart analysis, technical indicators, tradingview ticker, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading">
+  <meta name="keywords" content="forex, forex rebate, broker rebates, IC Markets, XM, Exness, HotForex, FBS, candlestick charts, open-high-low-close (OHLC), bullish engulfing, bearish engulfing, hammer candlestick, shooting star candlestick, doji, chart analysis, technical indicators, tradingview ticker, dukascopy news, buy sell positions, financial markets, advanced forex, fx trading, Range trading, oscillators, RSI, stochastic, support and resistance, Breakout trading, support and resistance, Bollinger Bands, volatility, momentum, Scalping, high-frequency trading, quick profits, tick charts, low latency, Trend trading, moving averages, MACD, market trends, trading discipline">
   <meta name="robots" content="index, follow" />
 
   <!-- Open Graph / Facebook -->
@@ -331,7 +331,10 @@
   </div>
     
 <!-- Začiatok sekcie INTRO s disclaimrom a widgetom -->
-<div class="intro white" id="intro-section" style="position: relative; background: url('images/obrazokweb2.png') no-repeat center center; padding: 60px 0; background-size: cover; transition: all 1s ease;">
+<div class="intro white" id="intro-section" style="position: relative; padding: 60px 0;">
+  <!-- Overlay pre pozadie -->
+  <div class="background-overlay" style="background: url('images/obrazokweb2.png') no-repeat center center; background-size: cover; position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 1; transition: all 1s ease;"></div>
+
   <div class="container" style="position: relative; z-index: 2;">    
     <div class="row">
       <!-- Ľavý stĺpec (Disclaimers, text) -->
@@ -378,11 +381,11 @@
 </div><!-- .intro -->
 
 <script>
-  // Po 4 sekundách pridáme efekt blur a tieň iba na pozadie sekcie
+  // Po 4 sekundách pridáme efekt blur a tieň iba na pozadie
   setTimeout(() => {
-    const introSection = document.getElementById('intro-section');
-    introSection.style.filter = 'blur(5px)';
-    introSection.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
+    const backgroundOverlay = document.querySelector('.background-overlay');
+    backgroundOverlay.style.filter = 'blur(5px)';
+    backgroundOverlay.style.boxShadow = '0 4px 30px rgba(0, 0, 0, 0.3)';
   }, 4000);
 </script>
 <!-- Koniec sekcie INTRO s disclaimrom a widgetom -->
