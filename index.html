@@ -297,12 +297,36 @@
       <img src="images/forexrabate.com.png" width="150" alt="ForexRabate.com Logo">
     </a>
     <nav class="navbar-right hidden-xs">
-      <a href="#forex-ea" class="btn btn-outline-secondary" style="margin-right: 10px;">Forex EA</a>
-  <a href="#forex-indicator" class="btn btn-outline-secondary" style="margin-right: 10px;">Forex Indicator</a>
-  <a href="#trading-strategies" class="btn btn-outline-secondary" style="margin-right: 10px;">Trading Strategies</a>
-  <a href="#market-analysis" class="btn btn-outline-secondary" style="margin-right: 10px;">Market Analysis</a>
-      <a class="last-child white" href="#contact">Contact</a>
-    </nav>
+  <style>
+    .navbar-right .btn {
+      padding: 5px 10px; /* Minimal padding */
+      font-size: 12px; /* Smaller text size */
+      border-radius: 4px; /* Slightly rounded corners */
+      margin-right: 5px; /* Smaller spacing between buttons */
+      color: #BFA55E; /* Custom text color */
+      border-color: #BFA55E; /* Custom border color */
+      background-color: transparent;
+    }
+
+    .navbar-right .btn:hover {
+      color: white; /* Text color on hover */
+      background-color: #BFA55E; /* Background color on hover */
+    }
+
+    .navbar-right .btn-primary {
+      background-color: #BFA55E;
+      color: white;
+      border-color: #BFA55E;
+    }
+  </style>
+
+  <a href="#forex-ea" class="btn btn-outline-secondary">Forex EA</a>
+  <a href="#forex-indicator" class="btn btn-outline-secondary">Forex Indicator</a>
+  <a href="#trading-strategies" class="btn btn-outline-secondary">Trading Strategies</a>
+  <a href="#market-analysis" class="btn btn-outline-secondary">Market Analysis</a>
+  <a class="btn btn-primary" href="#contact">Contact</a>
+</nav>
+
     <div class="visible-nav navbar-right visible-xs">
       <a href="#">EN</a>
       <a href="#contact">Contact</a>
