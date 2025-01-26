@@ -1265,10 +1265,140 @@
   </div>
 </div>
 
-<!-- Bottom Banner -->
-<div style="text-align:center; margin: 20px 0;">
-  <p style="border:2px dashed #ccc; padding:10px;">Banner Placeholder #4 (728x90 or 970x90)</p>
+
+<!-- Forex Trading Tools Section -->
+<div class="section" id="trading-tools" style="background-color:#f5f5f5; padding: 50px 0;">
+  <div class="container">
+    <h2 class="text-center" style="margin-bottom:30px; color:#333;">Forex Trading Tools & Calculators</h2>
+    <p class="text-center" style="color:#555; font-size:16px; max-width:800px; margin:0 auto;">
+      Access essential tools to enhance your trading strategy. From pip calculators to margin requirements, these interactive tools are designed to help you make informed decisions and manage your risk effectively.
+    </p>
+
+    <div class="row" style="margin-top:30px;">
+      <!-- Pip Calculator -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px;">
+        <div class="tool-card" style="background:white; border:1px solid #ddd; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+          <h4 style="color:#333;">Pip Calculator</h4>
+          <p style="color:#555; font-size:14px;">Calculate the value of a pip for your trades, depending on the currency pair, trade size, and account currency.</p>
+          <form id="pip-calculator">
+            <label for="currency-pair">Currency Pair:</label>
+            <select id="currency-pair" class="form-control">
+              <option value="EURUSD">EUR/USD</option>
+              <option value="GBPUSD">GBP/USD</option>
+              <option value="USDJPY">USD/JPY</option>
+            </select>
+            <label for="lot-size">Lot Size:</label>
+            <input type="number" id="lot-size" class="form-control" placeholder="Enter lot size (e.g., 1)">
+            <label for="account-currency">Account Currency:</label>
+            <select id="account-currency" class="form-control">
+              <option value="USD">USD</option>
+              <option value="EUR">EUR</option>
+              <option value="JPY">JPY</option>
+            </select>
+            <button type="button" class="btn btn-primary" style="margin-top:10px; width:100%;">Calculate</button>
+          </form>
+          <div id="pip-result" style="margin-top:10px; color:#333;"></div>
+        </div>
+      </div>
+
+      <!-- Margin Calculator -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px;">
+        <div class="tool-card" style="background:white; border:1px solid #ddd; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+          <h4 style="color:#333;">Margin Calculator</h4>
+          <p style="color:#555; font-size:14px;">Estimate the margin needed to open and hold a position, based on leverage and trade size.</p>
+          <form id="margin-calculator">
+            <label for="leverage">Leverage:</label>
+            <input type="text" id="leverage" class="form-control" placeholder="e.g., 1:100">
+            <label for="trade-size">Trade Size (in lots):</label>
+            <input type="number" id="trade-size" class="form-control" placeholder="Enter trade size">
+            <label for="price">Price:</label>
+            <input type="text" id="price" class="form-control" placeholder="Enter price (e.g., 1.1000)">
+            <button type="button" class="btn btn-primary" style="margin-top:10px; width:100%;">Calculate</button>
+          </form>
+          <div id="margin-result" style="margin-top:10px; color:#333;"></div>
+        </div>
+      </div>
+
+      <!-- Profit/Loss Calculator -->
+      <div class="col-md-4 col-sm-6" style="margin-bottom:20px;">
+        <div class="tool-card" style="background:white; border:1px solid #ddd; padding:20px; border-radius:8px; box-shadow:0 4px 8px rgba(0,0,0,0.1);">
+          <h4 style="color:#333;">Profit/Loss Calculator</h4>
+          <p style="color:#555; font-size:14px;">Calculate potential profit or loss based on entry, exit prices, and lot size.</p>
+          <form id="profit-loss-calculator">
+            <label for="entry-price">Entry Price:</label>
+            <input type="text" id="entry-price" class="form-control" placeholder="Enter entry price">
+            <label for="exit-price">Exit Price:</label>
+            <input type="text" id="exit-price" class="form-control" placeholder="Enter exit price">
+            <label for="lot-size-profit">Lot Size:</label>
+            <input type="number" id="lot-size-profit" class="form-control" placeholder="Enter lot size">
+            <button type="button" class="btn btn-primary" style="margin-top:10px; width:100%;">Calculate</button>
+          </form>
+          <div id="profit-loss-result" style="margin-top:10px; color:#333;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
+
+<script>
+  // Pip Calculator Functionality
+  document.querySelector('#pip-calculator button').addEventListener('click', function () {
+    const currencyPair = document.querySelector('#currency-pair').value;
+    const lotSize = parseFloat(document.querySelector('#lot-size').value);
+    const accountCurrency = document.querySelector('#account-currency').value;
+
+    if (isNaN(lotSize) || lotSize <= 0) {
+      document.getElementById('pip-result').innerText = 'Please enter a valid lot size.';
+      return;
+    }
+
+    let pipValuePerLot = 10; // Value for EUR/USD or similar
+    let pipValue;
+
+    if (currencyPair === 'EURUSD' || currencyPair === 'GBPUSD') {
+      pipValue = pipValuePerLot * lotSize;
+    } else if (currencyPair === 'USDJPY') {
+      pipValue = (pipValuePerLot / 100) * lotSize;
+    } else {
+      pipValue = pipValuePerLot * lotSize;
+    }
+
+    document.getElementById('pip-result').innerText = `The pip value for ${currencyPair} with ${lotSize} lots is ${pipValue.toFixed(2)} ${accountCurrency}.`;
+  });
+
+  // Margin Calculator Functionality
+  document.querySelector('#margin-calculator button').addEventListener('click', function () {
+    const leverage = document.querySelector('#leverage').value.split(':')[1];
+    const tradeSize = parseFloat(document.querySelector('#trade-size').value);
+    const price = parseFloat(document.querySelector('#price').value);
+
+    if (isNaN(tradeSize) || isNaN(price) || isNaN(leverage) || tradeSize <= 0 || price <= 0 || leverage <= 0) {
+      document.getElementById('margin-result').innerText = 'Please enter valid inputs.';
+      return;
+    }
+
+    const marginRequired = (tradeSize * 100000 * price) / leverage;
+    document.getElementById('margin-result').innerText = `The margin required for this trade is ${marginRequired.toFixed(2)} USD.`;
+  });
+
+  // Profit/Loss Calculator Functionality
+  document.querySelector('#profit-loss-calculator button').addEventListener('click', function () {
+    const entryPrice = parseFloat(document.querySelector('#entry-price').value);
+    const exitPrice = parseFloat(document.querySelector('#exit-price').value);
+    const lotSize = parseFloat(document.querySelector('#lot-size-profit').value);
+
+    if (isNaN(entryPrice) || isNaN(exitPrice) || isNaN(lotSize) || lotSize <= 0 || entryPrice <= 0 || exitPrice <= 0) {
+      document.getElementById('profit-loss-result').innerText = 'Please enter valid inputs.';
+      return;
+    }
+
+    const pipDifference = Math.abs(exitPrice - entryPrice) * 10000;
+    const profitLoss = pipDifference * lotSize * 10;
+
+    document.getElementById('profit-loss-result').innerText = `The potential profit/loss for this trade is ${profitLoss.toFixed(2)} USD.`;
+  });
+</script>
+
 
 <footer id="site-footer">
   <div class="container">
