@@ -900,28 +900,75 @@
 <!-- End of Forex Strategies Section -->
 
  <!-- Video sekcia -->
-   <div class="tv-frame">
-    <div class="tv-screen">
-        <iframe 
-            src="https://www.youtube.com/embed/pykpO5kQJ98?autoplay=1&mute=1" 
-            title="Euronews English Live" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-            allowfullscreen>
-        </iframe>
+  <div class="tv-container">
+    <div class="tv-row">
+        <div class="tv-frame">
+            <div class="tv-screen">
+                <iframe 
+                    src="https://www.youtube.com/embed/8_-Eum1nrDg?autoplay=1&mute=1" 
+                    title="LIVE: ICE arrests, Holocaust Remembrance Day, Trump GOP retreat &amp; more top stories" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+        <div class="tv-frame">
+            <div class="tv-screen">
+                <iframe 
+                    src="https://www.youtube.com/embed/UGy-hG7YyoI?autoplay=1&mute=1" 
+                    title="Trump&#39;s Eye On Chicago Immigrants | Trump Administration Launches Immigration Blitz In Chicago |N18G" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen>
+                </iframe>
+            </div>
+        </div>
+    </div>
+    <div class="tv-frame tv-full">
+        <div class="tv-screen">
+            <iframe 
+                src="https://www.youtube.com/embed/pykpO5kQJ98?autoplay=1&mute=1" 
+                title="Euronews English Live" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allowfullscreen>
+            </iframe>
+        </div>
     </div>
 </div>
 
 <style>
+    .tv-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-top: 30px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    .tv-row {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 100%;
+    }
+
     .tv-frame {
         position: relative;
-        width: 1050px;
-        height: 600px;
+        width: 45%;
+        max-width: 667px;
+        aspect-ratio: 16 / 9;
         border: 15px solid #333; /* Vonkajší rám */
         border-radius: 20px; /* Zaoblené rohy ako televízor */
         background: linear-gradient(145deg, #555, #222); /* Kovový vzhľad rámu */
         box-shadow: 0 15px 30px rgba(0, 0, 0, 0.5); /* Tieň pod televízorom */
         overflow: hidden;
         animation: glow 2s infinite; /* Animácia pre rám */
+    }
+
+    .tv-full {
+        width: 100%;
+        max-width: none;
     }
 
     /* Animácia pre LED efekt rámu */
@@ -954,6 +1001,21 @@
         width: 100%;
         height: 100%;
         border: none; /* Bez okraja */
+    }
+
+    @media (max-width: 768px) {
+        .tv-row {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .tv-frame {
+            width: 90%;
+        }
+
+        .tv-full {
+            width: 100%;
+        }
     }
 </style>
 
